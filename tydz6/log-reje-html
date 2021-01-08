@@ -1,0 +1,31 @@
+					<div class="rejestracja">  
+								<div class="main2">
+								<p class="sign" align="center">Rejestracja</p>
+									<form class="form1" method="POST" action="rejestracja.php">
+									<input class="un" type="text" align="center" name="login" placeholder="login">
+									<input class="pass" type="password" align="center" name="haslo1" placeholder="haslo">
+									<input class="pass" type="password" align="center" name="haslo2" placeholder="powtórz hasło">
+									<input class="pass" type="password" align="center" name="email" placeholder="e-mail">
+									<input type="submit" value="Utwórz konto" name="rejestruj" class="submit" align="center">
+									</form>
+								</div>
+					</div>
+					
+					<div class="logowanie">  
+							
+								<div class="main">	
+									<div class="main">
+										<p class="sign" align="center">Logowanie</p>
+										<form class="form1" method="POST" action="logowanie.php">
+										<input class="un" type="text" align="center" name="login" placeholder="login">
+										<input class="pass" type="password" align="center" name="haslo" placeholder="haslo">
+										<!--<a class="submit" align="center" name="loguj"></a>-->
+										<input type="submit" value="Zaloguj" name="loguj" class="submit" align="center">
+										</form>
+										<!--
+										<p class="forgot" align="center"><a href="#">Forgot Password?</p>
+										-->
+										
+									</div>
+								</div>
+							</div>
