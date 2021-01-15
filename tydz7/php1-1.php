@@ -11,6 +11,6 @@ if(is_uploaded_file($plik_tmp))
 }
 else
 {
-   echo '"Nigdy nie będzie tak, że nie napotkasz problemów" xD';
+   echo '"Nigdy nie będzie tak, że nie napotkasz problemów"...';
 }
 ?>
