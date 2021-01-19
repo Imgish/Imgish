@@ -47,9 +47,9 @@ session_start();
                 <nav class="navbar">
                     <div class="tm-navbar-bg">
                         
-                        <a class="navbar-brand text-uppercase" href="#"><i class="fa fa-picture-o tm-brand-icon"></i>Fluid Gallery</a>
+                        <a class="navbar-brand text-uppercase" href="#"><i class="fa fa-picture-o tm-brand-icon"></i>IMGISH</a>
                         <?php
-                        if (isset($_SESSION['login'])) {echo "Witaj".$_SESSION['login'];
+                        if (isset($_SESSION['login'])) {echo "Witaj ".$_SESSION['login'];
                         ?>
                                        
                                         <form class="form2" method="POST" action="logout.php">
