@@ -46,6 +46,10 @@ if(isset($_POST['email']))
     }
 }
 
+//If()
+//{   
+//}
+
 if($dziala==true)
 {
 $haslo_szyfr=password_hash($haslo1, PASSWORD_DEFAULT);
@@ -56,3 +60,4 @@ $con->close();
 }
 exit();
 ?>
+
