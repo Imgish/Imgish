@@ -398,10 +398,16 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 .tm-img {
+<<<<<<< HEAD:Strona/css/templatemo-style.css
 	max-width: 310px;
   	width: 100%;
   	height:350px;
   	
+=======
+	max-width: 320px;
+  	width: 100%;
+  	height: auto;
+>>>>>>> obrazy:All/FrameWork surowy/css/templatemo-style.css
   	border: none;
   	margin: 0 auto;
 }

@@ -1,0 +1,260 @@
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+	.main2 {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 600px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    
+    .sign {
+        padding-top: 40px;
+        color: #000000;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    .un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+    form.form1 {
+        padding-top: 40px;
+    }
+    
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+    
+   
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+        
+    }
+    
+    .submit2 {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-bottom: 5%;
+        padding-top: 5%;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        width:10vw;
+        margin-top: 35%;
+        text-align:center;
+    }
+    
+        .submit {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        
+    }
+    
+    
+    
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        padding-top: 15px;
+    }
+    
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        text-decoration: none
+    }
+   
+        
+        
+    .lewo{
+        position:relative;
+       
+        width: 15vw;
+        height: 40vw;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        float:left;
+    }   
+    .prawo{
+        padding:2vw;
+        position:relative;
+        margin-left:2vw;
+        background-color: #555555;
+        width: 52vw;
+        height: 40vw;
+        
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        float:left;
+
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
+  
+      .prawo1{
+        display:none;
+
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+
+        
+    }
+        
+        
+        /*.glowna-1
+        {
+        padding:1vw;
+        position:absolute;
+        margin-left:3%;
+        margin-right:3%;
+        margin-top:3%;
+        background-color: #99d1e6;
+    height: 100vh;        
+    width: 100vw;
+        display: inline-block;
+        
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        float:left;
+  overflow-y: hidden; 
+  overflow-x: hidden; 
+        }*/
+.zakonto{
+        padding:1vw;
+        
+        width: 71vw;
+        height: 42vw;
+        margin: 5em auto;
+        border-radius: 1.5em;
+        background-color: #d0edea;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    
+.konto-menug{
+    color:#000000;
+}    
+iframe .glowna-1 {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 100vh;        /* Viewport-relative units */
+    width: 100vw;
+}
+
+    
+     
+    @media (max-width: 680px) {
+        .main {
+            border-radius: 0px;
+        }
+        .lewo{
+            display:none;
+        }
+        
+        
+        .prawo1{
+            
+            display:block;
+            padding: 2vw;
+            position: relative;
+            margin-left: 5%;
+            background-color: #d0edea;
+            width: 90%;
+            height: 250px;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+            float: unset;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            margin-bottom: 4%;
+            
+        }
+        .prawo
+        {
+            padding: 2vw;
+            position: relative;
+            margin-left: 5%;
+            background-color: #d0edea;
+            width: 90%;
+            height: 250px;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+            float: unset;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            margin-bottom: 4%;
+        }
+        .zakonto{
+            width: 100%;
+            height:unset;
+            margin:unset;
+            margin-top: 6vh;
+            border-radius: unset;
+            background-color: unset;
+            box-shadow: unset;
+            text-align:center;
+        }
+        .tm-footer{
+            padding: unset;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }
+    
+.pudlo1-duze{height:auto;
+
+    
+}
