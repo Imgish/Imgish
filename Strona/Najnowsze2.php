@@ -1,17 +1,40 @@
+<script>
+function show() 
+{
+    <?php $_SESSION["liczbaz"]++ ?>;
+}
+</script>
+<script>
+function delo() 
+{
+    <?php unset ($_SESSION["liczbaz"] )?>;
+}
+</script>
+
 <?php
 
 session_start();
-if(isset($zmienna))
-{$zmienna=$zmienna+15;}
+if(isset($_SESSION["liczbaz"]))
+{
+$zacz=($_SESSION["liczbaz"]*16)-16;
+$skon=($_SESSION["liczbaz"]*16);
+}
 else
-{$zmienna=1;}
+{
+$_SESSION["liczbaz"]=1;
+$zacz=1;
+$skon= 16;
+}
+
+
+
+
 $con =mysqli_connect('localhost','id15971773_bazaio20test','JakiesLosoweHaslo12!','id15971773_projektio')or die('Brak połączenia z serwerem MySQL.');
 
 $obrazyzaladowane = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
 $obrazyzaladowanetytul = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
-$pom2=$pom1+16;
-
-for($pom1=$zmienna; $pom1<=$pom2 ; $pom1=$pom1+1)
+echo $zacz."test".$skon."teso";
+for($pom1=$zacz; $pom1<=$skon ; $pom1=$pom1+1)
 {
 $query = "SELECT * FROM (SELECT *, (ROW_NUMBER() OVER( ORDER BY DataWstawienia DESC))'test' FROM Obrazy)o WHERE o.test =$pom1";
 $test=mysqli_query($con,$query);
@@ -293,6 +316,17 @@ $con->close();
                                             </figcaption>           
                                         </figure>
                                     </div> 
+                                    
+                                    <form>
+                                    <input name='add' type="submit" value='+' onclick="show()">
+                                    
+                                    </form>
+                                    <form >
+                                    <input name='add' type="submit" value='+' onclick="delo()">
+                                    
+                                    </form>
+                                    
+
 	</div>
 	</body>
 	</html>
