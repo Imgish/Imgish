@@ -38,17 +38,20 @@ if(isset($_POST['email']))
         $_SESSION['e_haslo']="Haslo musi posiadać od 5 do 20 znaków.";
         echo "Haslo musi posiadać od 5 do 20 znaków.";
     }
+    if(ctype_alnum($haslo1)==false)
+    {
+        $dziala=false;
+        $_SESSION['e_haslo']="Hasło musi składać się tylko z liter i cyfr(bez polskich liter).";
+        echo "Tylko litery i cyfry bez polskich liter";
+    }
     if($haslo1 != $haslo2)
     {
         $dziala=false;
         $_SESSION['e_haslo']="Hasła muszą być takie same.";
         echo "Hasła muszą być takie same."; 
     }
+    
 }
-
-//If()
-//{   
-//}
 
 if($dziala==true)
 {
@@ -56,8 +59,7 @@ $haslo_szyfr=password_hash($haslo1, PASSWORD_DEFAULT);
 $con->query("INSERT INTO Rejestracja(Login, Haslo, Email)
 VALUES ('$login', '$haslo_szyfr', '$email')");
 $con->close();
-//header("Location: https://ioprojekt.000webhostapp.com");
+header("Location: https://ioprojekt.000webhostapp.com");
 }
 exit();
 ?>
-
