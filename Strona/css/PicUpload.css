@@ -1,23 +1,22 @@
-.PicUpload{
-    display:block;
+.PicUploadSpace{
+    text-align:center;
+    background-color: #efb5b5;
+    border-radius: 5em;
+    
+    
 }
 
-.PicManual{
-    display:block;
+.PicChose{
 }
 
-.PicBrowse{
-    display:block;
+.PicSelect{
 }
 
-.PicSwipe{
-    display:block;
+.PicSubission{
 }
 
 .PicSwipeArea{
-    display:block;
 }
 
 .PickSubmit{
-    display:block;
 }
