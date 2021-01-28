@@ -1,0 +1,73 @@
+.kolejna_strona {
+	box-shadow: 2px 2px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:42px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Verdana;
+	font-size:17px;
+	padding:8px 18px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #e1e2ed;
+	margin-top:1%;
+}
+.kolejna_strona:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.kolejna_strona:active {
+	position:relative;
+	top:1px;
+}
+.strona_glowna {
+	box-shadow: 2px 2px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:42px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Verdana;
+	font-size:17px;
+	padding:8px 18px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #e1e2ed;
+	margin-top:1%;
+}
+.strona_glowna:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.strona_glowna:active {
+	position:relative;
+	top:1px;
+}
+.poprzednia_strona {
+	box-shadow: 2px 2px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:42px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Verdana;
+	font-size:17px;
+	padding:8px 18px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #e1e2ed;
+	margin-top:1%;
+}
+.poprzednia_strona:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.poprzednia_strona:active {
+	position:relative;
+	top:1px;
+}
+
