@@ -1,22 +1,26 @@
-<script>
-function show() 
-{
-    <?php $_SESSION["liczbaz"]++ ?>;
-}
-</script>
-<script>
-function delo() 
-{
-    <?php unset ($_SESSION["liczbaz"] )?>;
-}
-</script>
-
 <?php
-
 session_start();
+
+                                if(isset($_REQUEST['glowna']))
+                                {
+                                     unset ($_SESSION["liczbaz"] );
+                                }
+                                else
+                                if(isset($_REQUEST['przod']))
+                                {
+                                    $_SESSION["liczbaz"]++;
+                                }
+                                else
+                                if(isset($_REQUEST['powrot']))
+                                {
+                                    $_SESSION["liczbaz"]--;
+                                }
+
+
+
 if(isset($_SESSION["liczbaz"]))
 {
-$zacz=($_SESSION["liczbaz"]*16)-16;
+$zacz=($_SESSION["liczbaz"]*16)-15;
 $skon=($_SESSION["liczbaz"]*16);
 }
 else
@@ -28,12 +32,10 @@ $skon= 16;
 
 
 
-
 $con =mysqli_connect('localhost','id15971773_bazaio20test','JakiesLosoweHaslo12!','id15971773_projektio')or die('Brak połączenia z serwerem MySQL.');
 
 $obrazyzaladowane = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
 $obrazyzaladowanetytul = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
-echo $zacz."test".$skon."teso";
 for($pom1=$zacz; $pom1<=$skon ; $pom1=$pom1+1)
 {
 $query = "SELECT * FROM (SELECT *, (ROW_NUMBER() OVER( ORDER BY DataWstawienia DESC))'test' FROM Obrazy)o WHERE o.test =$pom1";
@@ -317,14 +319,14 @@ $con->close();
                                         </figure>
                                     </div> 
                                     
-                                    <form>
-                                    <input name='add' type="submit" value='+' onclick="show()">
-                                    
-                                    </form>
-                                    <form >
-                                    <input name='add' type="submit" value='+' onclick="delo()">
-                                    
-                                    </form>
+                                <form action="" method="POST" onclick='window.location.reload();'>
+                                
+                                <input type="submit" value="kolejna strona" name="przod">
+                                <input type="submit" value="strona glowna" name="glowna">
+                                <input type="submit" value="poprzednia strona" name="powrot">
+                                </form>
+                                
+
                                     
 
 	</div>
