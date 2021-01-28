@@ -71,6 +71,8 @@ $con->close();
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		
 
         <script>
 		
@@ -318,13 +320,15 @@ $con->close();
                                             </figcaption>           
                                         </figure>
                                     </div> 
-                                    
-                                <form action="" method="POST" onclick='window.location.reload();'>
                                 
-                                <input type="submit" value="kolejna strona" name="przod">
-                                <input type="submit" value="strona glowna" name="glowna">
-                                <input type="submit" value="poprzednia strona" name="powrot">
-                                </form>
+                                <form action="" method="POST" onclick='window.location.reload();'>
+									
+									<input type="submit" class="kolejna_strona" value="kolejna strona" name="przod">       
+									<input type="submit" class="strona_glowna"  value="strona glowna" name="glowna">       
+									<input type="submit" class="poprzednia_strona" value="poprzednia strona" name="powrot">   
+								</form>
+								
+						
                                 
 
                                     
