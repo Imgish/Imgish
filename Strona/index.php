@@ -162,7 +162,7 @@ session_start();
                     <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="2" data-page-type="gallery">
                         <div class="tm-img-gallery-container">
                             <div class="tm-img-gallery gallery-two">
-                                <div  id="petsdivcontainer2" style="display: block;height:100vh;width:100vw;">
+                                <div  id="petsdivcontainer2" style="display: block;height:100vh;width:100vw; margin-right: 3%">
                                         <iframe id="petsdivcontainer2"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowyklik2", "petsdivcontainer2")
@@ -422,7 +422,7 @@ mypets.init()
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="tm-flex tm-contact-container">                                
-                                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact">
+                                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact"style="border-radius: 3em; margin-left: 5vw; margin-right: 5vw;">
                                                 <h2 class="tm-contact-info">Feel free to say Hi!</h2>
                                                 <p class="tm-text">Nulla sed urna at ligula maximus blandit. Mauris nisi ligula, ultricies ac diam id, hendrerit tincidunt ipsum. Maecenas non massa justo.</p>                                                
                                                 
@@ -446,11 +446,7 @@ mypets.init()
                                                 </form>  
                                             </div>
 
-                                            <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact">
-                                                <h2 class="tm-contact-info">4466 Old New St 28290, SF, California</h2>
-                                                  
-                                                <div id="google-map"></div>
-                                            </div>
+                                          
 
                                         </div>
 
@@ -470,11 +466,11 @@ mypets.init()
             <footer class="tm-footer">
             
                 <div class="tm-social-icons-container text-xs-center">
-                    <a href="#" class="tm-social-link"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
-                    <a href="#" class="tm-social-link"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="tm-social-link"><i class="fa fa-behance"></i></a>
-                    <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://pl-pl.facebook.com/" class="tm-social-link"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.google.pl/" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
+                    <a href="https://twitter.com/?lang=pl" class="tm-social-link"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.behance.net/" class="tm-social-link"><i class="fa fa-behance"></i></a>
+                    <a href="https://pl.linkedin.com/" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
               </div>
                 
                 <p class="tm-copyright-text">Imgish <span class="tm-copyright-year">2020</span> projekt na zaliczenie IO
