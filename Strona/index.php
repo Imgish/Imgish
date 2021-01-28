@@ -7,22 +7,16 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title></title>
-<!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">  
-    <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="Font-Awesome-4.7/css/font-awesome.min.css">                
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="css/bootstrap.min.css">                                      
-    <!-- Bootstrap style -->
     <link rel="stylesheet" href="css/hero-slider-style3.css">                              
-    <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
     <link rel="stylesheet" href="css/magnific-popup.css">                                 
-    <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
     <link rel="stylesheet" href="css/templatemo-style.css">   
     <link rel="stylesheet" href="css/img.css"> 
-    <link rel="stylesheet" href="css/logrej.css">   
+    <link rel="stylesheet" href="css/logrej.css">  
+    
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
@@ -75,47 +69,27 @@ session_start();
    <div id="testowylik1"> 
    <a href="Najnowsze2.php"   rel="#iframe" style="padding:0;">
     <input type="submit" 
-    value="Najnowsze"
-    style="border:unset"
-    style="text-align:center;padding:0;"
-    class="nav-link">
-    </a>
-    </div>
-</li >                                
-<!--<li class="selected">
-   <div id="testowyklik2"> 
-   <a href="Zdjecia-uzytkownika.php"   rel="#iframe" style="padding:0;">
-    <input type="submit" 
-    value="Konto"
-    style="border:unset"
-    style="text-align:center;padding:0;"
-    class="nav-link">
-    </a>
-    </div>
-</li>  -->   
-<li class="nav-item">
-
-    
-    
-    
-    <div id="testowyklik2"> 
-   <a href="Zdjecia-uzytkownika.php"   rel="#iframe" style="padding:0;" data-no="2">
-    <input type="submit" 
     value="Kategorie"
     style="border:unset"
     style="text-align:center;padding:0;"
     class="nav-link">
     </a>
     </div>
-    
-    
-    
-    
-   
+</li >                                
+<li class="nav-item">
+    <div id="testowyklik2"> 
+   <a href="Zdjecia-uzytkownika.php"   rel="#iframe" style="padding:0;" data-no="2">
+    <input type="submit"
+    value="Dodaj Zdjęcie"
+    style="border:unset"
+    style="text-align:center;padding:0;"
+    class="nav-link">
+    </a>
+    </div>
 </li>
 <li class="nav-item">
-                                    <a class="nav-link" href="#0" data-no="3">FAQ</a>
-                                </li>
+        <a class="nav-link" href="#0" data-no="3">FAQ</a>
+</li>
 <li class="nav-item">
     <a class="nav-link" href="#0" data-no="4">
     	<?php
@@ -203,24 +177,6 @@ session_start();
                         </div>
                                          
             </li>
-            <!--<li>                    
-                <div class="cd-full-width">
-                    <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="2" data-page-type="gallery">
-                        <div class="tm-img-gallery-container">
-                            <div class="tm-img-gallery gallery-two">
-                                
-                                        jakis tekst
-                                    </div>
-                                </div>
-                            </div>                                 
-                        </div>
-                                         
-            </li>-->
-            
-
-                
-				
-                <!-- Page 4 FAQ -->
                 <li>
                     <div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="3">
@@ -295,32 +251,7 @@ session_start();
 									if (isset($_SESSION['login']))
 									{?>
                                        <div class="zakonto">
-                                        
-								<!--<div class="lewo" id="pettabs"> -->
-								    
-								    <!--
-								<form class="form1">		    
-							    <a href="Konto-uzytkownika.php" target="ramka" class="submit">Konto</a>
-							    <br>
-							    <a href="Zdjecia-uzytkownika.php" target="ramka" class="submit">Twoje Zdjęcia</a><br>
-							    <a href="Ustawienia-uzytkownika.php" target="ramka" class="submit">Ustawienia</a><br>
-							    </form>
-							        -->
-							    
-							    
-                                
-                               <!-- <div id="pettabs" class="indentmenu">-->
                                <div class="lewo">
-                                <!--<form class="form1">-->
-                                <!--
-                                <div id="pettabs" class="indentmenu">
-                                <a href="external1.htm" rel="#iframe" class="selected">Tab 1</a>
-                                <a href="external2.htm" rel="#iframe">Tab 2</a>
-                                <a href="external3.htm" rel="#iframe">Tab 3</a>
-                                <a href="external4.htm" rel="#iframe">Tab 4</a>
-                            </div>
-                            -->
-                               <!-- </form>-->
                                
 							
 							
@@ -344,33 +275,16 @@ session_start();
     style="text-align:center;"
     class="submit2"></a>
 </div>
-							
-							
-							
-							
-							
-							
-								</div>
-							
+</div>
 <div class="prawo" id="petsdivcontainer">
-   
-
-
-
-
-
-
 <script type="text/javascript">
-
 var mypets=new ddajaxtabs("pettabs", "petsdivcontainer")
 mypets.setpersist(false)
 mypets.setselectedClassTarget("link")
 mypets.init()
-
 </script>
-    </div>
+</div>
 <div class="prawo1" id="petsdivcontainer">
-   <!--<iframe id="petsdivcontainer"></iframe>-->
 
 
 
