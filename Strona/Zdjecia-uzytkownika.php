@@ -2,28 +2,12 @@
 <html>
  <link rel="stylesheet" href="css/PicUpload.css">      
  <body>
-<style>
-#drop_zone {
-    background-color: #EEE; 
-    border: #999 5px dashed;
-    width: 290px; 
-    height: 200px;
-    padding: 8px;
-    font-size: 18px;
-}
-      
-     
-
-</style>
-<form action="wgrywanie.php" method="POST" ENCTYPE="multipart/form-data">  
-    <div class="PicChose">
-        
-        
-        
-        
-        
+<form action="wgrywanie.php" method="POST" ENCTYPE="multipart/form-data"> 
+    <div class="body_dropzone">
+        <div class="PicChose">
 <script>
-function drag_drop(event) {
+function drag_drop(event) 
+ {
     event.preventDefault();
     /*alert(event.dataTransfer.files[0]);
     alert(event.dataTransfer.files[0].name);
@@ -34,30 +18,22 @@ function drag_drop(event) {
 </script>
 <h1>File Upload Drop Zone</h1>
 <div id="drop_zone" ondrop="drag_drop(event)" ondragover="return false"></div>
-        
-
-
-
-
-
- </div>
-    
-        
-
-        
+</div>
 <!-- TO ZMIEN WYGLAD NIE MUSI NA NIM DZIALAC OPCJA DRAG AND DROP WYSTACZY PRZYCISK DRAG AND DROP BEDZIE W TYMBOXIE 
 WYZEJ-->
-       <input type="file" name="plik" class="PicSelect"/><br/> 
-  
-        
-    <div class="PicSubmission">
-        Nazwa pliku<input type="text" name="nazwapliku" class="PicName">
-        <input type="submit" value="Wyślij"/ class="PicSubmit">
+<div class="Form">
+        <input type="file" name="plik" class="PicSelect"  style="margin-bottom: 2%;"> 
+
+        <div class="PicSubmission">
+            Nazwa pliku<input type="text" name="nazwapliku" class="PicName">
+            <input type="submit" value="Wyślij"/ class="PicSubmit">
+        </div>
+    
     </div>
     
-   </div>
-
-  </form>
+    </div>
+    </div>
+ </form>
   </form>
  </body>
 </html>
