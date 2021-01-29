@@ -159,10 +159,12 @@ session_start();
                 <!-- Page 2 Gallery Two -->
             <li>                    
                 <div class="cd-full-width">
-                    <div class="container-fluid js-tm-page-content tm-page-width tm-pad-b" data-page-no="2" data-page-type="gallery">
+                    <div  data-page-no="2" data-page-type="gallery">
                         <div class="tm-img-gallery-container">
                             <div class="tm-img-gallery gallery-two">
-                                <div  id="petsdivcontainer2" style="display: block;height:100vh;width:100vw; margin-right: 3%">
+                                <div class="pudlo1-duze">
+                                        <div class="glowna-1" id="petsdivcontainer2" 
+                                            style="display: block;height:100vh;width:90vw;">
                                         <iframe id="petsdivcontainer2"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowyklik2", "petsdivcontainer2")
@@ -170,6 +172,7 @@ session_start();
                                             mypets.setselectedClassTarget("link")
                                             mypets.init()
                                             </script>
+                                            </div>
                                             </div>
                                     </div>
                                 </div>
