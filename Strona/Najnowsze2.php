@@ -88,7 +88,7 @@ $con->close();
 </head>
 
     <body style="width:100%;height:100%">
-							<div class="glowna-1">
+							<div class="glowna-1" style="text-align: center;">
 									<div class="grid-item">
                                         <figure class="effect-sadie">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[1]";?>" alt="Image" class="img-fluid tm-img">
@@ -323,9 +323,9 @@ $con->close();
                                 
                                 <form action="" method="POST" onclick='window.location.reload();'>
 									
-									<input type="submit" class="kolejna_strona" value="kolejna strona" name="przod">       
-									<input type="submit" class="strona_glowna"  value="strona glowna" name="glowna">       
-									<input type="submit" class="poprzednia_strona" value="poprzednia strona" name="powrot">   
+									<input type="submit" class="poprzednia_strona" value="Poprzednia strona" name="powrot">   
+									<input type="submit" class="strona_glowna"  value="Strona główna" name="glowna">       
+									<input type="submit" class="kolejna_strona" value="Następna strona" name="przod">       
 								</form>
 								
 						
