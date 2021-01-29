@@ -164,7 +164,7 @@ session_start();
                             <div class="tm-img-gallery gallery-two">
                                 <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer2" 
-                                            style="display: block;height:100vh;width:90vw;">
+                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
                                         <iframe id="petsdivcontainer2"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowyklik2", "petsdivcontainer2")
