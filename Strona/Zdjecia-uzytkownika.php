@@ -6,8 +6,7 @@
     <div class="body_dropzone">
         <div class="PicChose">
 <script>
-function drag_drop(event) 
- {
+function drag_drop(event) {
     event.preventDefault();
     /*alert(event.dataTransfer.files[0]);
     alert(event.dataTransfer.files[0].name);
@@ -18,10 +17,10 @@ function drag_drop(event)
 </script>
 <h1>File Upload Drop Zone</h1>
 <div id="drop_zone" ondrop="drag_drop(event)" ondragover="return false"></div>
-</div>
+ </div>
 <!-- TO ZMIEN WYGLAD NIE MUSI NA NIM DZIALAC OPCJA DRAG AND DROP WYSTACZY PRZYCISK DRAG AND DROP BEDZIE W TYMBOXIE 
 WYZEJ-->
-<div class="Form">
+    <div class="Form">
         <input type="file" name="plik" class="PicSelect"  style="margin-bottom: 2%;"> 
 
         <div class="PicSubmission">
@@ -31,9 +30,9 @@ WYZEJ-->
     
     </div>
     
+ </div>
     </div>
-    </div>
- </form>
+  </form>
   </form>
  </body>
 </html>
