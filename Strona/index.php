@@ -91,15 +91,45 @@ session_start();
         <a class="nav-link" href="#0" data-no="3">FAQ</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#0" data-no="4">
+    
     	<?php
     	if (isset($_SESSION['login']))
     	{
-        echo "Witaj <br>".$_SESSION['login'];
+    	    ?>
+    	    <a class="nav-link" href="#0" data-no="4">
+    	        <?php
+        echo " Witaj <br>".$_SESSION['login'];
+        ?>
+        </a>
+        <?php
     	}
     	else
     	{?>
-    	Rejestracja
+    	<div id="testowylik3" >
+    	<a href="rejestracjaform.php" rel="#iframe" style="padding:0;border:none;"  data-no="4">
+    <input type="submit" 
+    value="Rejestracja"
+    style="border:unset"
+    style="text-align:center;padding:0;"
+    class="nav-link">
+    </a></div>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    	
         <?php 
     	}?>
 	</a>
@@ -326,16 +356,37 @@ mypets.init()
 									<?php } 
 									else
 									{ ?>
-									<div class="main2">
-									<p class="sign" align="center">Rejestracja</p>
-									<form class="form1" method="POST" action="rejestracja.php" style="text-align:center;">
-									<input class="un" type="text" align="center" name="login" placeholder="login">
-									<input class="pass" type="password" align="center" name="haslo1" placeholder="haslo">
-									<input class="pass" type="password" align="center" name="haslo2" placeholder="powtórz hasło">
-									<input class="pass" type="mail" align="center" name="email" placeholder="e-mail">
-									<input type="submit" value="Utwórz konto" name="rejestruj" class="submit" align="center">
-									</form>
-									</div>
+								
+									
+									
+									
+									
+									<div class="tm-img-gallery-container">
+                            
+                                            <div class="pudlo1-duze">
+                                        <div class="glowna-1" id="petsdivcontainer5" 
+                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
+                                        <iframe id="petsdivcontainer5"></iframe>                       
+                                            <script>
+                                            var mypets=new ddajaxtabs("testowylik3", "petsdivcontainer5")
+                                            mypets.setpersist(false)
+                                            mypets.setselectedClassTarget("link")
+                                            mypets.init()
+                                            </script>
+                                            </div>
+                                            </div>
+                                    </div>
+                               
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
 										<?php
 									}?>
 								
@@ -367,7 +418,7 @@ mypets.init()
 									//	{
 									//	unset($_SESSION['login']);
 									// ?>
-									//	<script>object.reload(forcedReload);</script>
+									echo "wyloguj";
 									//	<?php
 									//	}
 										
