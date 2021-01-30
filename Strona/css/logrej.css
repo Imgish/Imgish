@@ -15,6 +15,24 @@
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     }
     
+    .RejMain{
+        background-color: #FFFFFF;
+        width: 40%;
+        padding-bottom: 2%;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    
+     .LogMain{
+        background-color: #FFFFFF;
+        width: 40%;
+        padding-bottom: 2%;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    
     .sign {
         padding-top: 40px;
         color: #000000;
@@ -144,6 +162,13 @@
   overflow-x: hidden; /* Hide horizontal scrollbar */
     }
   
+  .ResetHasla{
+      text-align:center;
+        text-shadow: 0px 0px 3px rgb(117 117 117 / 12%);
+        color: #0020ff;
+  }
+  
+  
       .prawo1{
         display:none;
 
@@ -254,7 +279,6 @@ iframe .glowna-1 {
         }
     }
     
-.pudlo1-duze{height:auto;
-
-    
+.pudlo1-duze{
+	height:auto;
 }
