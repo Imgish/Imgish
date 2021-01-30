@@ -12,14 +12,14 @@ session_start();
     
     <body>
         
-        <div Form class="Form">
+        <div Form class="FormRestore">
         <p class="sign" align="center">Przywróć hasło</p>
 			<form class="form1" method="POST" action="zmiana-ustawien.php">
 				<input class="stare_haslo" type="password" align="center" name="Login" placeholder="Login">
 				<br>
 				<input class="nowe_haslo" type="password" align="center" name="Email" placeholder="Email">
 				</br>
-				<input class="powtorz_haslo" type="password" align="center" name="NoweHaslo" placeholder="NoweHaslo">
+				<input class="nowe_haslo" type="password" align="center" name="NoweHaslo" placeholder="Nowe haslo">
 				<input class="powtorz_haslo" type="password" align="center" name="Powtórz-NoweHaslo" placeholder="Powtórz-NoweHaslo">
 				<br>
 				<input type="submit" value="Zmień hasło" name="ZmienHaslo" class="submit" align="center">
