@@ -33,6 +33,12 @@
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     }
     
+    .RejError{
+        color:red;
+        text-align: center;
+        margin-top: 10%;
+    }
+    
     .sign {
         padding-top: 40px;
         color: #000000;
@@ -279,6 +285,7 @@ iframe .glowna-1 {
         }
     }
     
-.pudlo1-duze{
-	height:auto;
+.pudlo1-duze{height:auto;
+
+    
 }
