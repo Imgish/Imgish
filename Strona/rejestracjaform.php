@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<div class="main2">
+<div>
 									
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +11,27 @@ session_start();
     <body>
         
         
-        <div class="main2">
+        <div class="RejMain">
 									<p class="sign" align="center">Rejestracja</p>
+									<p style="color:red;text-color:red;">
+									<?php  
+									
+									if (isset($_SESSION['e_login'])) 
+									{
+									    
+									    
+									    echo $_SESSION['e_login'];
+									    
+									    
+									}
+									else
+									{}
+									
+									
+									
+									
+									
+									?></p>
 									<form class="form1" method="POST" action="rejestracja.php" style="text-align:center;">
 									<input class="un" type="text" align="center" name="login" placeholder="login">
 									<input class="pass" type="password" align="center" name="haslo1" placeholder="haslo">
