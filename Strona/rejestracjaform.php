@@ -13,7 +13,7 @@ session_start();
         
         <div class="RejMain">
 									<p class="sign" align="center">Rejestracja</p>
-									<p style="color:red;text-color:red;">
+									<p class="RejError">
 									<?php  
 									
 									if (isset($_SESSION['e_login'])) 
@@ -47,7 +47,9 @@ session_start();
 									</form>
 									</div>
         
-
+        
+        
+        
     </body>
     </html>
     
