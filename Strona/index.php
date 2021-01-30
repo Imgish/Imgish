@@ -1,5 +1,6 @@
 <?php
 session_start();
+unset($_SESSION['e_login']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
