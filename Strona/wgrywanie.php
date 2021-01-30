@@ -17,55 +17,63 @@ if (mysqli_num_rows($data)>0)
     echo "istnieje juz plik o takiej nazwie"; 
 }
 else 
-{   
-    if($roz == 'png' or $roz == 'jpg' or $roz == 'jpeg' or $roz =='gif')
     {
-        if($plik_rozmiar <= 2000000)
+    if(isset($_SESSION['login']))
+    {
+        if($roz == 'png' or $roz == 'jpg' or $roz == 'jpeg' or $roz =='gif')
         {
-            if(strlen($nazwa1) <= 25)  //14
+            if($plik_rozmiar <= 2000000)
             {
-                if($tytul <= 14)
+                if(strlen($nazwa1) <= 25)  //14
                 {
-                    if(is_uploaded_file($plik_tmp))
+                    if($tytul <= 14)
                     {
-                        $query3 = "SELECT ID FROM Rejestracja WHERE Login='$login'";
-                        $data2=mysqli_query($con,$query3);
-                        $wiersz = mysqli_fetch_array($data2);
-                        $wiersz1 = $wiersz['ID'];
-                        echo $wiersz1;
-                        echo $plik_nazwa;
-                        echo $tytul;
-                        echo $plik_rozmiar;
-                        echo $dataDoda;
-                        $con->query("INSERT INTO Obrazy(IDUzytkownika, Nazwa, TytulObrazu, Rozmiar, DataWstawienia, Lapka) VALUES ('$wiersz1', '$plik_nazwa', '$tytul','$plik_rozmiar','$dataDoda','0')");
-                        $con->close();
-                        move_uploaded_file($plik_tmp, "obraz/".$plik_nazwa);
-                        echo "Plik: <strong>$plik_nazwa</strong> o rozmiarze
-                        <strong>$plik_rozmiar bajtów</strong> został przesłany na serwer!";
+                        if(is_uploaded_file($plik_tmp))
+                        {
+                            $query3 = "SELECT ID FROM Rejestracja WHERE Login='$login'";
+                            $data2=mysqli_query($con,$query3);
+                            $wiersz = mysqli_fetch_array($data2);
+                            $wiersz1 = $wiersz['ID'];
+                            $con->query("INSERT INTO Obrazy(IDUzytkownika, Nazwa, TytulObrazu, Rozmiar, DataWstawienia, Lapka) VALUES ('$wiersz1', '$plik_nazwa', '$tytul','$plik_rozmiar','$dataDoda','0')");
+                            $con->close();
+                            move_uploaded_file($plik_tmp, "obraz/".$plik_nazwa);
+                            echo "Plik: <strong>$plik_nazwa</strong> o rozmiarze
+                            <strong>$plik_rozmiar bajtów</strong> został przesłany na serwer!";
+                        }
+                        else
+                        {
+                            $_SESSION['e_zdjęcie']="Nigdy nie będzie tak, że nie napotkasz problemów.";
+                            echo 'Nigdy nie będzie tak, że nie napotkasz problemów.';
+                        }
                     }
                     else
                     {
-                       echo '"Nigdy nie będzie tak, że nie napotkasz problemów" ';
+                        $_SESSION['e_zdjęcie']="Zbyt długi tytuł obrazu.";
+                        echo 'Zbyt długi tytuł obrazu.';
                     }
                 }
                 else
                 {
-                    echo 'Zbyt długi tytuł obrazu.';
+                    $_SESSION['e_zdjęcie']="Za długa nazwa pliku(max 25 znaków).";
+                    echo 'Za długa nazwa pliku(max 25 znaków).';
                 }
             }
             else
             {
-                echo 'Za długa nazwa pliku(max 25 znaków).';
+                $_SESSION['e_zdjęcie']="Za duży rozmiar pliku.";
+                echo 'Za duży rozmiar pliku.';
             }
         }
         else
         {
-            echo 'Za duży rozmiar pliku!';
+            $_SESSION['e_zdjęcie']="Złe rozszerzenie.";
+            echo 'Złe rozszerzenie.';
         }
     }
     else
     {
-        echo 'Złe rozszerzenie.';
+        $_SESSION['e_zdjęcie']="Musisz być zalogowany, aby móc wgrać zdjęcie.";
+        echo 'Musisz być zalogowany, aby móc wgrać zdjęcie.';
     }
 }
 //$con->close();
