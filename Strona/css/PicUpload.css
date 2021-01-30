@@ -10,7 +10,6 @@
     margin-top: 3%;
     box-shadow: 0px 11px 35px 2px rgb(0 0 0 / 14%);
 }
-
 #filedrag {
 	display: none;
 	font-weight: bold;
@@ -61,6 +60,7 @@
         padding-right: 3%;
     }
     
+	
     #drop_zone{
         display: none;
     }
