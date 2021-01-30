@@ -10,7 +10,6 @@ session_start();
     </head>
     <body>
         
-        
         <div class="RejMain">
 									<p class="sign" align="center">Rejestracja</p>
 									<p class="RejError">
@@ -18,27 +17,16 @@ session_start();
 									
 									if (isset($_SESSION['e_login'])) 
 									{
-									    
-									    
 									    echo $_SESSION['e_login'];
-									    
-									    
 									}
 							
 									if (isset($_SESSION['e_inne'])) 
 									{
-									    
-									    
 									    echo $_SESSION['e_inne'];
-									    
-									    
 									}
-								
-									
-									
 									
 									?></p>
-									<form class="form1" method="POST" action="rejestracja.php" style="text-align:center;">
+									<form class="form1" method="POST" action="rejestracja.php" style="text-align:center; padding-top:2%;">
 									<input class="un" type="text" align="center" name="login" placeholder="login">
 									<input class="pass" type="password" align="center" name="haslo1" placeholder="haslo">
 									<input class="pass" type="password" align="center" name="haslo2" placeholder="powtórz hasło">
@@ -46,10 +34,5 @@ session_start();
 									<input type="submit" value="Utwórz konto" name="rejestruj" style="margin-top: 8%;" class="submit" align="center">
 									</form>
 									</div>
-        
-        
-        
-        
     </body>
     </html>
-    
