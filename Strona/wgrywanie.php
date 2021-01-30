@@ -35,7 +35,6 @@ else
                             $wiersz = mysqli_fetch_array($data2);
                             $wiersz1 = $wiersz['ID'];
                             $con->query("INSERT INTO Obrazy(IDUzytkownika, Nazwa, TytulObrazu, Rozmiar, DataWstawienia, Lapka) VALUES ('$wiersz1', '$plik_nazwa', '$tytul','$plik_rozmiar','$dataDoda','0')");
-                            $con->close();
                             move_uploaded_file($plik_tmp, "obraz/".$plik_nazwa);
                             echo "Plik: <strong>$plik_nazwa</strong> o rozmiarze
                             <strong>$plik_rozmiar bajtów</strong> został przesłany na serwer!";
@@ -76,6 +75,6 @@ else
         echo 'Musisz być zalogowany, aby móc wgrać zdjęcie.';
     }
 }
-//$con->close();
+$con->close();
 exit();
 ?>
