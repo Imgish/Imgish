@@ -135,18 +135,26 @@ session_start();
 	</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#0" data-no="5">
+    
 	<?php
     if (isset($_SESSION['login']))
     {?>
-    wyloguj
+
+    </a>
     <?php }
     else
     {?>
-    Logowanie
+    <div id="testowylik6" >
+    	<a href="logowanieform.php" rel="#iframe" style="padding:0;border:none;"  data-no="5">
+    <input type="submit" 
+    value="Logowanie"
+    style="border:unset"
+    style="text-align:center;padding:0;"
+    class="nav-link">
+    </a></div>
     <?php 
     }?>
-	</a>
+	
 </li>
 <li class="nav-item">
     <a class="nav-link" href="#0" data-no="6">Kontakt</a>
@@ -405,51 +413,37 @@ mypets.init()
 					<div>
 					<div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="5">
-							<div class="logowanie">  
-							
-								<div class="main">	
+	
 									
 									
 									
 									<?php
 									if (isset($_SESSION['login']))
 									{
-									//	if (isset($_SESSION['login']))
-									//	{
-									//	unset($_SESSION['login']);
-									// ?>
-									echo "wyloguj";
-									//	<?php
-									//	}
-										
-										    
-										  
-										
-										
+									    ?>
+									  
+									    <?php
 									}
 									else
-									{ ?>
-									 <!-- header("Location: https://imgish.000webhostapp.com/"); -->
-									<p class="sign" align="center">Logowanie</p>
-										<?php
-									if (isset($_SESSION['zlelogowanie']))
-									{
+									{ 
 									?>
-									wpisano zle dane
-									<?php 
+                                        <div class="pudlo1-duze">
+                                        <div class="glowna-1" id="petsdivcontainer6" 
+                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
+                                        <iframe id="petsdivcontainer6"></iframe>                       
+                                            <script>
+                                            var mypets=new ddajaxtabs("testowylik6", "petsdivcontainer6")
+                                            mypets.setpersist(false)
+                                            mypets.setselectedClassTarget("link")
+                                            mypets.init()
+                                            </script>
+                                            </div>
+                                            </div>
+
+
+									<?php
 									}
 									?>
-										<form class="form1" method="POST" action="logowanie.php" style="text-align:center;">
-										<input class="un" type="text" align="center" name="login" placeholder="login">
-										<input class="pass" type="password" align="center" name="haslo" placeholder="haslo">
-										<!--<a class="submit" align="center" name="loguj"></a>-->
-										<input type="submit" value="Zaloguj" name="loguj" class="submit" align="center">
-										</form>
-										<!--
-										<p class="forgot" align="center"><a href="#">Forgot Password?</p>
-										-->
-									<?php
-									}?>
 									
 									
 									
@@ -462,8 +456,7 @@ mypets.init()
 										
 										
 									
-								</div>
-							</div>
+						
 						</div>
 					</div>
 				</li>
