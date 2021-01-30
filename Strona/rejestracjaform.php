@@ -24,10 +24,16 @@ session_start();
 									    
 									    
 									}
-									else
-									{}
-									
-									
+							
+									if (isset($_SESSION['e_inne'])) 
+									{
+									    
+									    
+									    echo $_SESSION['e_inne'];
+									    
+									    
+									}
+								
 									
 									
 									
@@ -37,13 +43,11 @@ session_start();
 									<input class="pass" type="password" align="center" name="haslo1" placeholder="haslo">
 									<input class="pass" type="password" align="center" name="haslo2" placeholder="powtórz hasło">
 									<input class="pass" type="mail" align="center" name="email" placeholder="e-mail">
-									<input type="submit" value="Utwórz konto" name="rejestruj" class="submit" align="center">
+									<input type="submit" value="Utwórz konto" name="rejestruj" style="margin-top: 8%;" class="submit" align="center">
 									</form>
 									</div>
         
-        
-        
-        
+
     </body>
     </html>
     
