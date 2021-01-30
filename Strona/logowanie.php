@@ -20,14 +20,12 @@ if (mysqli_num_rows($data)>0)
     else
     {
        echo "niedziala";
-?>
-      
-<?php    
+   
     }
 }
 $con->close(); 
-?>
-<?php
-header("Location: https://ioprojekt.000webhostapp.com");
+
+
+header("Location:reload.php");
 exit();
 ?>
