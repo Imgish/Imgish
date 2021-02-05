@@ -2,6 +2,8 @@
 session_start();
 unset($_SESSION['e_login']);
 unset($_SESSION['e_login1']);
+unset($_SESSION['e_przywhaslo']);
+unset($_SESSION['e_zdjęcie']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
