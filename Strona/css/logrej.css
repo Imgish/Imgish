@@ -17,7 +17,7 @@
     
     .RejMain{
         background-color: #FFFFFF;
-        width: 40%;
+        width: 500px;
         padding-bottom: 2%;
         margin: 7em auto;
         border-radius: 1.5em;
@@ -232,6 +232,10 @@ iframe .glowna-1 {
            
             width: 40%;
        }
+       .RejMain{
+           
+           width: 40%;
+       }
 }
      
     @media (max-width: 680px) {
@@ -242,6 +246,13 @@ iframe .glowna-1 {
             display:none;
         }
         
+        .LogMain{
+            width: 200px;
+        }
+        
+        .RejMain{
+            width: 200px;
+        }
         
         .prawo1{
             
