@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="css/PasswordChange.css">
-    
+
     <head>
     </head>
     
@@ -14,6 +14,15 @@ session_start();
         
         <div Form class="FormRestore">
         <p class="sign" align="center">Przywróć hasło</p>
+        				<p class="RejError">
+						<?php  
+						
+						if (isset($_SESSION['e_przywhaslo'])) 
+						{
+						    echo $_SESSION['e_przywhaslo'];
+						}
+						
+						?></p>
         <form class="form1" method="POST" action="zapomnialeshasla1.php" style="text-align:center;">
 				<input class="stare_haslo" type="text" align="center" name="Login" placeholder="Login">
 				<br>
@@ -30,4 +39,3 @@ session_start();
         
     </body>
 </html>
-    
