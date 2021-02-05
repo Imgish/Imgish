@@ -86,13 +86,13 @@ $con->close();
             else {
                 $('html').removeClass('gray');   
             }
-        </script>
+</script>
 </head>
     <body style="width:100%;height:100%">
-							<div class="glowna-1 gallery-one" style="text-align: center;">
-									<div class="grid-item "">
+							<div class="glowna-1 " style="text-align: center;">
+								<div class="grid-item ">
 									
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[1]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -103,29 +103,37 @@ $con->close();
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[1]";?>"></a>
                                                    
-                                            </figcaption>    
-                            <div class="Oceny">
-                               <div class="liczba" style="float:left";>
+                                            </figcaption>  
+                                            </figure>
+                                    <div class="Oceny">
+                                        <div class="liczba" style="float:left";>
 									<B>
 									<?php echo "$obrazyzaladowanelapki[1]";?>
 									</B>
-								</div>
-								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
+								        </div>
+								        <div class="glos" style="float:right";>
+								
+								
+								
+								
+								<form class="form1" method="POST" action="lapka.php" style="text-align:center;padding-top: 4%;">
+					<input type="submit" value="Zaloguj" name="loguj" align="center">
+					
+									<a type="submit"  style="text-align:right;z-index:10;position:relative;">
 									<i class="far fa-plus-square" style="color:black;font-size:2vw;"></i>
 									<i class="far fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
 									</a>
-								</div>
-							</div>
-                        </figure>
+									<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+									
+								        </div>
+						           </div>
+                        
                                       
-                                    </div>
+                                </div>
                                     <div class="grid-item">
                                    
-                                        <figure class="effect-sadie">
-                                        <figure class="effect-sadie" style="z-index:1;">
+                                        
+                                        <figure class="effect-sadie gallery-one" style="z-index:1;">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[2]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"><span>
@@ -139,6 +147,7 @@ $con->close();
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[2]";?>"></a>
                                                 
                                             </figcaption>
+                                            </figure>
                                              <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -154,12 +163,12 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
-                                        <figure class="effect-sadie">
+                                        
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[3]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"><span>
@@ -171,7 +180,7 @@ $con->close();
                                                     </span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[3]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>  </figure>         
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -187,12 +196,12 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
                                     
                                         
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[4]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -202,7 +211,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[4]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>  </figure>         
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 								<B>
@@ -218,10 +227,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>  
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[5]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -231,7 +240,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[5]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>     </figure>      
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -247,10 +256,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[6]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -260,7 +269,7 @@ $con->close();
                                                 </strong></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[6]";?>"></a>
-                                            </figcaption>
+                                            </figcaption></figure>
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -276,10 +285,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[7]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -289,7 +298,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[7]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>  </figure>         
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 								    <B>
@@ -305,10 +314,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[8]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -318,7 +327,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[8]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>   </figure>        
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -334,10 +343,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>   
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[9]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -347,7 +356,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[9]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>   </figure>        
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -363,10 +372,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[10]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -376,7 +385,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[10]";?>"></a>
-                                            </figcaption>
+                                            </figcaption></figure>
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -392,10 +401,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[11]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -405,7 +414,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[11]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>      </figure>     
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -421,10 +430,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[12]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -434,7 +443,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[12]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption> </figure>          
                                       <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -450,10 +459,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[13]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span>
@@ -464,7 +473,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[13]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>    </figure>       
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -480,22 +489,22 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[14]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span>
                                                     <strong>
                                                 <?php 
-                                                echo $obrazyzaladowanetytul[1];
+                                                echo $obrazyzaladowanetytul[14];
                                                 ?>
                                                 </strong>
                                                     </span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[14]";?>"></a>
-                                            </figcaption>
+                                            </figcaption></figure>
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -511,10 +520,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[15]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -524,7 +533,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[15]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>     </figure>      
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -540,10 +549,10 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div>
                                     <div class="grid-item">
-                                        <figure class="effect-sadie">
+                                        <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[16]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
                                                 <h2 class="tm-figure-title"> <span><strong>
@@ -553,7 +562,7 @@ $con->close();
                                                 </strong></span></h2>
                                                 <p class="tm-figure-description"></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[16]";?>"></a>
-                                            </figcaption>           
+                                            </figcaption>         </figure>  
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
@@ -569,7 +578,7 @@ $con->close();
 									</a>
 								</div>
 							</div>
-                        </figure>
+                        
                                     </div> 
                                 
                                 <form action="" method="POST" onclick='window.location.reload();'>
