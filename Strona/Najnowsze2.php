@@ -116,16 +116,10 @@ $con->close();
 								
 								
 								
-								<form class="form1" method="POST" action="lapka.php" style="text-align:center;padding-top: 4%;">
-					<input type="submit" value="Zaloguj" name="loguj" align="center">
-					
-									<a type="submit"  style="text-align:right;z-index:10;position:relative;">
-									<i class="far fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="far fa-minus-square" style="color:black;font-size:2vw;"></i>
-									</a>
-									<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
-									
-								        </div>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 4%;">
+									<Button type="submit" name="Link" value="<?php echo "$obrazyzaladowane[1]";?>">
+									    test</button>
+									</div>
 						           </div>
                         
                                       
@@ -155,7 +149,7 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+                                    <a onclick="myFunction()" style="text-align:right;z-index:10;position:relative;">
 									
 									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
 									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
