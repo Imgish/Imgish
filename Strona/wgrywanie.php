@@ -1,5 +1,6 @@
 <?php
 session_start();
+unset($_SESSION['e_zdjęcie']);
 $login=$_SESSION['login'];
 $plik_tmp = $_FILES['plik']['tmp_name'];
 $plik_nazwa = $_FILES['plik']['name'];
@@ -11,10 +12,9 @@ $query = "SELECT Nazwa FROM Obrazy WHERE Nazwa = '$plik_nazwa'";
 $data=mysqli_query($con,$query);
 $roz = pathinfo($plik_nazwa,PATHINFO_EXTENSION);
 $nazwa1 = pathinfo($plik_nazwa,PATHINFO_FILENAME);
-
 if (mysqli_num_rows($data)>0)
 {
-    echo "istnieje juz plik o takiej nazwie"; 
+    $_SESSION['e_zdjęcie']="Istnieje juz plik o takiej nazwie.";
 }
 else 
     {
@@ -36,45 +36,40 @@ else
                             $wiersz1 = $wiersz['ID'];
                             $con->query("INSERT INTO Obrazy(IDUzytkownika, Nazwa, TytulObrazu, Rozmiar, DataWstawienia, Lapka) VALUES ('$wiersz1', '$plik_nazwa', '$tytul','$plik_rozmiar','$dataDoda','0')");
                             move_uploaded_file($plik_tmp, "obraz/".$plik_nazwa);
-                            echo "Plik: <strong>$plik_nazwa</strong> o rozmiarze
+                            $_SESSION['e_zdjęcie']="<strong>$plik_nazwa</strong> o rozmiarze
                             <strong>$plik_rozmiar bajtów</strong> został przesłany na serwer!";
                         }
                         else
                         {
                             $_SESSION['e_zdjęcie']="Nigdy nie będzie tak, że nie napotkasz problemów.";
-                            echo 'Nigdy nie będzie tak, że nie napotkasz problemów.';
                         }
                     }
                     else
                     {
                         $_SESSION['e_zdjęcie']="Zbyt długi tytuł obrazu.";
-                        echo 'Zbyt długi tytuł obrazu.';
                     }
                 }
                 else
                 {
                     $_SESSION['e_zdjęcie']="Za długa nazwa pliku(max 25 znaków).";
-                    echo 'Za długa nazwa pliku(max 25 znaków).';
                 }
             }
             else
             {
                 $_SESSION['e_zdjęcie']="Za duży rozmiar pliku.";
-                echo 'Za duży rozmiar pliku.';
             }
         }
         else
         {
-            $_SESSION['e_zdjęcie']="Złe rozszerzenie.";
-            echo 'Złe rozszerzenie.';
+            $_SESSION['e_zdjęcie']="Złe rozszerzenie lub nie wypełniono któregoś z pól.";
         }
     }
     else
     {
         $_SESSION['e_zdjęcie']="Musisz być zalogowany, aby móc wgrać zdjęcie.";
-        echo 'Musisz być zalogowany, aby móc wgrać zdjęcie.';
     }
 }
+header("Location:Zdjecia-uzytkownika.php");
 $con->close();
 exit();
 ?>
