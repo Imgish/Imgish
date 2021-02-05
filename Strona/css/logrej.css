@@ -70,6 +70,9 @@
         padding-top: 40px;
     }
     
+    .form2{
+    }
+    
     .pass {
             width: 76%;
     color: rgb(38, 50, 56);
@@ -238,6 +241,14 @@ iframe .glowna-1 {
        }
 }
      
+     @media (max-width:1000px){
+         
+                 .form2 {
+            margin-right: 40%;
+        }
+     }
+     
+     
     @media (max-width: 680px) {
         .main {
             border-radius: 0px;
@@ -301,7 +312,7 @@ iframe .glowna-1 {
             padding-left: 5%;
             padding-right: 5%;
         }
-    }
+}
     
 .pudlo1-duze{height:auto;
 
