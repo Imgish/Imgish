@@ -1,39 +1,80 @@
+<?php
+session_start();
+
+                                if(isset($_REQUEST['glowna']))
+                                {
+                                     unset ($_SESSION["liczbaz"] );
+                                }
+                                else
+                                if(isset($_REQUEST['przod']))
+                                {
+                                    $_SESSION["liczbaz"]++;
+                                }
+                                else
+                                if(isset($_REQUEST['powrot']))
+                                {
+                                    $_SESSION["liczbaz"]--;
+                                }
+
+
+
+if(isset($_SESSION["liczbaz"]))
+{
+$zacz=($_SESSION["liczbaz"]*16)-15;
+$skon=($_SESSION["liczbaz"]*16);
+}
+else
+{
+$_SESSION["liczbaz"]=1;
+$zacz=1;
+$skon= 16;
+}
+
+
+
+$con =mysqli_connect('localhost','id15971773_bazaio20test','JakiesLosoweHaslo12!','id15971773_projektio')or die('Brak połączenia z serwerem MySQL.');
+
+$obrazyzaladowane = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
+$obrazyzaladowanetytul = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
+$obrazyzaladowanelapki = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
+for($pom1=$zacz; $pom1<=$skon ; $pom1=$pom1+1)
+{
+$query = "SELECT * FROM (SELECT *, (ROW_NUMBER() OVER( ORDER BY DataWstawienia DESC))'test' FROM Obrazy)o WHERE o.test =$pom1";
+$test=mysqli_query($con,$query);
+$wiersz = $test->fetch_assoc();
+$obrazyzaladowane[$pom1]=$wiersz['Nazwa'];
+$obrazyzaladowanetytul[$pom1]=$wiersz['TytulObrazu'];
+$obrazyzaladowanelapki[$pom1]=$wiersz['Lapka'];
+
+}
+$con->close(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Fluid Gallery HTML5 CSS3 Template</title>
-<!--
-Fluid Gallery Template
-http://www.templatemo.com/tm-500-fluid-gallery
--->
-    <!-- load stylesheets -->
+    <title></title>
+<!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">  
     <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="Font-Awesome-4.7/css/font-awesome.min.css">                
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/bootstrap.min.css">                                      
     <!-- Bootstrap style -->
-    <link rel="stylesheet" href="css/hero-slider-style.css">                              
+    <link rel="stylesheet" href="css/hero-slider-style3.css">                              
     <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
     <link rel="stylesheet" href="css/magnific-popup.css">                                 
     <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
-    <link rel="stylesheet" href="css/templatemo-style.css">  
-<script src="https://kit.fontawesome.com/424ca7393a.js" crossorigin="anonymous"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-          <![endif]-->
-
-        <!-- These two JS are loaded at the top for gray scale including the loader. -->
-
+    <link rel="stylesheet" href="css/templatemo-style.css">   
+    <link rel="stylesheet" href="css/img.css">  
+    <link rel="stylesheet" href="css/logrej1.css">   
         <script src="js/jquery-1.11.3.min.js"></script>
-        <!-- jQuery (https://jquery.com/download/) -->
+        <script type="text/javascript" src="js/ajaxtabs.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+	<script src="https://kit.fontawesome.com/424ca7393a.js" crossorigin="anonymous"></script>	
 
         <script>
 		
@@ -47,297 +88,516 @@ http://www.templatemo.com/tm-500-fluid-gallery
             }
         </script>
 </head>
-
-    <body>
-        
-        <!-- Content -->
-        <div class="cd-hero">
-
-            <!-- Navigation -->        
-            <div class="cd-slider-nav">
-                <nav class="navbar">
-                    <div class="tm-navbar-bg">
-                        
-                        <a class="navbar-brand text-uppercase" href="#"><i class="fa fa-picture-o tm-brand-icon"></i>Fluid Gallery</a>
-
-                        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
-                            &#9776;
-                        </button>
-                        <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item active selected">
-                                    <a class="nav-link" href="#0" data-no="1">1st fluid <span class="sr-only">(current)</span></a>
-                                </li>                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#0" data-no="2">2nd fluid</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#0" data-no="3">3rd fluid</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#0" data-no="4">Columns</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#0" data-no="5">Message</a>
-                                </li>
-                            </ul>
-                        </div>                        
-                    </div>
-
-                </nav>
-            </div> 
-			<script>
-function myFunction() 
-{
-parent.location.reload();
-}
-</script>
-            <ul class="cd-hero-slider">
-
-                <!-- Page 1 Gallery One -->
-                <li class="selected">                    
-                    <div class="cd-full-width">
-                        <div class="container-fluid js-tm-page-content" data-page-no="1">
-                            <div class="tm-img-gallery-container">
-                                <div class="tm-img-gallery gallery-one">
-                                <!-- Gallery One pop up connected with JS code below -->
-                                    <div class="grid-item">
+    <body style="width:100%;height:100%">
+							<div class="glowna-1 gallery-one" style="text-align: center;">
+									<div class="grid-item "">
+									
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-01-tn.jpg" alt="Image" class="img-fluid tm-img">
-											<figcaption>
-
-											
-
-
-                                                <h2 class="tm-figure-title">Image <span><strong>One</strong></span></h2>
-                                                <p class="tm-figure-description">Set true or false in HTML script tag for this page black and white.</p>
-												
-												<a href="img/tm-img-01.jpg">View more</a>
-												
-												</figcaption>
-												<div>
-										<div style="float:left";>
-										<B>
-									liczba lapek aktualna
-										</B>
-										</div>
-										<div style="float:right";>
-                                         <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-												<div>
-												<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-												<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-												</div>
-												</a>
-												</div>
-												
-                                               
-											
-                                        </figure>
-										
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[1]";?>" alt="Image" class="img-fluid tm-img">
+                                            <figcaption>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[1];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[1]";?>"></a>
+                                                   
+                                            </figcaption>    
+                            <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[1]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="far fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="far fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
+                                      
                                     </div>
                                     <div class="grid-item">
+                                   
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-02-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                        <figure class="effect-sadie" style="z-index:1;">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[2]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Two</strong></span></h2>
-                                                <p class="tm-figure-description">Set true or false in HTML page line number 40 to turn on off page color.</p>
-                                                <a href="img/tm-img-02.jpg">View more</a>
+                                                <h2 class="tm-figure-title"><span>
+                                                    <strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[2];
+                                                ?>
+                                                </strong>
+                                                    </span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[2]";?>"></a>
+                                                
                                             </figcaption>
-                                        </figure>
-										<div>
-										<div style="float:left";>
-										<B>
-									liczba lapek aktualna
-										</B>
-										</div>
-												<div style="float:right";>
-												<a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-												<i class="far fa-plus-square" style="color:black;font-size:2vw;"></i>
-												</a> 
-												<a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-												<i class="far fa-minus-square" style="color:black;font-size:2vw;"></i>
-												</a> 
-												</div>
-												        </div>
+                                             <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[2]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
+                                    
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-03-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                        <figure class="effect-sadie">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[3]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Three</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-03.jpg">View more</a>
+                                                <h2 class="tm-figure-title"><span>
+                                                    <strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[3];
+                                                ?>
+                                                </strong>
+                                                    </span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[3]";?>"></a>
                                             </figcaption>           
-                                        </figure>
-										<a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-												<div>
-												<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-												<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-												</div>
-												</a>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[3]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
+                                    
+                                        
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-04-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[4]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Four</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-04.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[4];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[4]";?>"></a>
                                             </figcaption>           
-                                        </figure>
-										<a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-												<div>
-												<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-												<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-												</div>
-												</a>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+								<B>
+									<?php echo "$obrazyzaladowanelapki[4]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>  
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-05-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[5]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Five</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-05.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[5];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[5]";?>"></a>
                                             </figcaption>           
-                                        </figure>
-										ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[5]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-06-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[6]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Six</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-06.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[6];
+                                                ?>
+                                                </strong></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[6]";?>"></a>
                                             </figcaption>
-                                        </figure>
-										ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[6]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-07-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[7]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Seven</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-07.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[7];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[7]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+								    <B>
+									<?php echo "$obrazyzaladowanelapki[7]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-08-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[8]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Eight</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-08.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                    <B>
+									                <?php echo "$obrazyzaladowanelapki[8]";?>
+									                </B>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[8]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									liczba lapek aktualna
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>   
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-09-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[9]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Nine</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-09.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[9];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[9]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[9]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-10-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[10]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Ten</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-10.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[10];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[10]";?>"></a>
                                             </figcaption>
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[10]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-11-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[11]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Eleven</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-11.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[11];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[11]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[11]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[12]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Twelve</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-12.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[12];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[12]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                      <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[12]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-13-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[13]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Thirteen</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-13.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span>
+                                                    <strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[13];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[13]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[13]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-14-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[14]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Fourteen</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-14.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span>
+                                                    <strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[1];
+                                                ?>
+                                                </strong>
+                                                    </span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[14]";?>"></a>
                                             </figcaption>
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[14]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-15-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[15]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Fifteen</strong></span></h2>
-                                                <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                <a href="img/tm-img-15.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[15];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[15]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[15]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
                                     </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie">
-                                            <img src="img/tm-img-16-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                            <img src="obraz/<?php echo "$obrazyzaladowane[16]";?>" alt="Image" class="img-fluid tm-img">
                                             <figcaption>
-                                                <h2 class="tm-figure-title">Image <span><strong>Sixteen</strong></span></h2>
-                                                <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                                <a href="img/tm-img-16.jpg">View more</a>
+                                                <h2 class="tm-figure-title"> <span><strong>
+                                                <?php 
+                                                echo $obrazyzaladowanetytul[16];
+                                                ?>
+                                                </strong></span></h2>
+                                                <p class="tm-figure-description"></p>
+                                                <a href="obraz/<?php echo "$obrazyzaladowane[16]";?>"></a>
                                             </figcaption>           
-                                        </figure>ilosc lapek    <button style="width:20%; height:2vw"></button>
-                                    </div>                                                                       
-                                </div>                                 
-                            </div>
-                        </div>                                                    
-                    </div>                    
-                </li>
-				</ul>
-				</div>
-				</div>
-				</div>
+                                        <div class="Oceny">
+                               <div class="liczba" style="float:left";>
+									<B>
+									<?php echo "$obrazyzaladowanelapki[16]";?>
+									</B>
+								</div>
+								<div class="glos" style="float:right";>
+                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
+									
+									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
+									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
+									
+									</a>
+								</div>
+							</div>
+                        </figure>
+                                    </div> 
+                                
+                                <form action="" method="POST" onclick='window.location.reload();'>
+									
+									<input type="submit" class="poprzednia_strona" value="Poprzednia strona" name="powrot">   
+									<input type="submit" class="strona_glowna"  value="Strona główna" name="glowna">       
+									<input type="submit" class="kolejna_strona" value="Następna strona" name="przod">       
+								</form>
+								
+						
+                                
 
-         
-        
+                                    
 
-        <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
-
-        
-        <!-- load JS files -->
-        
-        <script src="js/tether.min.js"></script> <!-- Tether (http://tether.io/)  --> 
+	</div>
+	
+	
+	        <script src="js/tether.min.js"></script> <!-- Tether (http://tether.io/)  --> 
         <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
         <script src="js/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
         <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
-        
-        <script>
+	
+	
+	
+	
+	
+	
+	<script>
 
             function adjustHeightOfPage(pageNo) {
 
@@ -385,7 +645,6 @@ parent.location.reload();
                     gallery:{enabled:true}                
                 });
 				
-
                 /* Collapse menu after click 
                 -----------------------------------------*/
                 $('#tmNavbar a').click(function(){
@@ -404,9 +663,15 @@ parent.location.reload();
                         adjustHeightOfPage( currentPageNo );
                     }, 1000);
                     
-                });         
-            });
-        </script>            
+                });
 
-</body>
-</html>
+            });
+        </script>    
+	
+	
+	
+	
+	
+	
+	</body>
+	</html>
