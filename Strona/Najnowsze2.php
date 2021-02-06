@@ -30,21 +30,28 @@ $zacz=1;
 $skon= 16;
 }
 
-
+$login=$_SESSION['login'];
 
 $con =mysqli_connect('localhost','id15971773_bazaio20test','JakiesLosoweHaslo12!','id15971773_projektio')or die('Brak połączenia z serwerem MySQL.');
 
 $obrazyzaladowane = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
 $obrazyzaladowanetytul = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
 $obrazyzaladowanelapki = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
+$lapa = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 for($pom1=$zacz; $pom1<=$skon ; $pom1=$pom1+1)
 {
+    echo $pom1;
 $query = "SELECT * FROM (SELECT *, (ROW_NUMBER() OVER( ORDER BY DataWstawienia DESC))'test' FROM Obrazy)o WHERE o.test =$pom1";
 $test=mysqli_query($con,$query);
 $wiersz = $test->fetch_assoc();
 $obrazyzaladowane[$pom1]=$wiersz['Nazwa'];
 $obrazyzaladowanetytul[$pom1]=$wiersz['TytulObrazu'];
 $obrazyzaladowanelapki[$pom1]=$wiersz['Lapka'];
+
+$query5 = "SELECT * FROM Lapka WHERE TytulObrazu = '$obrazyzaladowane[$pom1]' AND Login = '$login'" ;
+$data=mysqli_query($con,$query5);
+if (mysqli_num_rows($data)>0)
+{$lapa[$pom1]=1;}else{$lapa[$pom1]=0;}
 
 }
 $con->close(); 
@@ -116,9 +123,10 @@ $con->close();
 								
 								
 								
-								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 4%;">
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top:0%;">
 									<Button type="submit" name="Link" value="<?php echo "$obrazyzaladowane[1]";?>">
 									    test</button>
+									    </form>
 									</div>
 						           </div>
                         
@@ -143,22 +151,24 @@ $con->close();
                                             </figcaption>
                                             </figure>
                                              <div class="Oceny">
-                               <div class="liczba" style="float:left";>
+                                        <div class="liczba" style="float:left";>
 									<B>
 									<?php echo "$obrazyzaladowanelapki[2]";?>
 									</B>
+								        </div>
+							<div class="glos" style="float:right";>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[2]";?>">
+									    <?php if($lapa[2]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
-								</div>
-							</div>
+						    </div>
                         
-                                    </div>
+                        </div>
                                     
                                     <div class="grid-item">
                                         
@@ -182,16 +192,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[3]";?>">
+									    <?php if($lapa[3]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                     
                                         
@@ -213,16 +224,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[4]";?>">
+									    <?php if($lapa[4]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>  
+						    </div>
+                        </div> 
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[5]";?>" alt="Image" class="img-fluid tm-img">
@@ -242,16 +254,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[5]";?>">
+									    <?php if($lapa[5]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[6]";?>" alt="Image" class="img-fluid tm-img">
@@ -271,16 +284,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[6]";?>">
+									    <?php if($lapa[6]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[7]";?>" alt="Image" class="img-fluid tm-img">
@@ -300,16 +314,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[7]";?>">
+									    <?php if($lapa[7]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[8]";?>" alt="Image" class="img-fluid tm-img">
@@ -325,20 +340,21 @@ $con->close();
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
 									<B>
-									liczba lapek aktualna
+									<?php echo "$obrazyzaladowanelapki[8]";?>
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[8]";?>">
+									    <?php if($lapa[8]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>   
+						    </div>
+                        </div>  
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[9]";?>" alt="Image" class="img-fluid tm-img">
@@ -358,16 +374,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[9]";?>">
+									    <?php if($lapa[9]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[10]";?>" alt="Image" class="img-fluid tm-img">
@@ -387,16 +404,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[10]";?>">
+									    <?php if($lapa[10]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[11]";?>" alt="Image" class="img-fluid tm-img">
@@ -416,16 +434,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[11]";?>">
+									    <?php if($lapa[11]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[12]";?>" alt="Image" class="img-fluid tm-img">
@@ -445,16 +464,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[12]";?>">
+									    <?php if($lapa[12]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[13]";?>" alt="Image" class="img-fluid tm-img">
@@ -475,16 +495,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[13]";?>">
+									    <?php if($lapa[13]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[14]";?>" alt="Image" class="img-fluid tm-img">
@@ -506,16 +527,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[14]";?>">
+									    <?php if($lapa[14]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[15]";?>" alt="Image" class="img-fluid tm-img">
@@ -535,16 +557,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[15]";?>">
+									    <?php if($lapa[15]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div>
+						    </div>
+                        </div>
                                     <div class="grid-item">
                                         <figure class="effect-sadie gallery-one">
                                             <img src="obraz/<?php echo "$obrazyzaladowane[16]";?>" alt="Image" class="img-fluid tm-img">
@@ -564,16 +587,17 @@ $con->close();
 									</B>
 								</div>
 								<div class="glos" style="float:right";>
-                                    <a onclick="myFunction()" style="text-align:right;;z-index:10;position:relative;">
-									
-									<i class="fas fa-plus-square" style="color:black;font-size:2vw;"></i>
-									<i class="fas fa-minus-square" style="color:black;font-size:2vw;"></i>
-									
-									</a>
+								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
+									<Button type="submit" name="Link" 
+									value="<?php echo "$obrazyzaladowane[16]";?>">
+									    <?php if($lapa[16]==0)
+									    {echo "like";}else{echo "dislike";}?>
+									    
+									    
+									</button></form>
 								</div>
-							</div>
-                        
-                                    </div> 
+						    </div>
+                        </div> 
                                 
                                 <form action="" method="POST" onclick='window.location.reload();'>
 									
