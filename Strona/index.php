@@ -20,8 +20,9 @@ unset($_SESSION['e_haslo']);
     <link rel="stylesheet" href="css/magnific-popup.css">                                 
     <link rel="stylesheet" href="css/templatemo-style.css">   
     <link rel="stylesheet" href="css/img.css"> 
-    <link rel="stylesheet" href="css/logrej.css">  
-    
+    <link rel="stylesheet" href="css/logrej.css">
+    <link rel="stylesheet" href="css/Logout.css">
+    <link rel="stylesheet" href="css/buttons.css">
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
@@ -108,22 +109,6 @@ unset($_SESSION['e_haslo']);
     class="nav-link">
     </a></div>
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    	
         <?php 
     	}?>
 	</a>
@@ -287,9 +272,7 @@ unset($_SESSION['e_haslo']);
 									{?>
                                        <div class="zakonto">
                                <div class="lewo">
-                               
-							
-							
+     
 							<div id="pettabs" class="indentmenu" style="text-align:center;">
 
     
@@ -316,12 +299,6 @@ mypets.setselectedClassTarget("link")
 mypets.init()
 </script>
 
-
-
-
-
-
-
 <script type="text/javascript">
 
 var mypets=new ddajaxtabs("pettabs", "petsdivcontainer")
@@ -332,33 +309,13 @@ mypets.init()
 </script>
     </div>
 
-
-										
-										
-										
-										</div>
-										</div>
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
+	                        </div>
+	                        </div>
+		
 									<?php } 
 									else
 									{ ?>
-								
-									
-									
-									
-									
+			
 									<div class="tm-img-gallery-container">
                             
                                             <div class="pudlo1-duze">
@@ -374,27 +331,10 @@ mypets.init()
                                             </div>
                                             </div>
                                     </div>
-                               
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
+
 										<?php
 									}?>
 								
-								
-								
-								
-								
-								
-								
-							
 							</div>
 						</div>
 					</div>
@@ -404,14 +344,11 @@ mypets.init()
 					<div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="5">
 	
-									
-									
-									
+	
 									<?php
 									if (isset($_SESSION['login']))
 									{
 									    ?>
-									  
 									    <?php
 									}
 									else
@@ -434,19 +371,8 @@ mypets.init()
 									<?php
 									}
 									?>
-									
-									
-									
-									
-									
-									
-									
-									
-									
-										
-										
-									
-						
+
+
 						</div>
 					</div>
 				</li>
