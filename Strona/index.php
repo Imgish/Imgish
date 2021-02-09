@@ -1,10 +1,6 @@
 <?php
 session_start();
 unset($_SESSION['e_login']);
-unset($_SESSION['e_login1']);
-unset($_SESSION['e_przywhaslo']);
-unset($_SESSION['e_zdjęcie']);
-unset($_SESSION['e_haslo']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -307,17 +303,17 @@ unset($_SESSION['e_haslo']);
     style="text-align:center;"
     class="submit2"></a>
     
-<a href="Zdjecia-uzytkownika.php" rel="#iframe" > <input type="submit" 
-    value="Zdjęcia"
+<a href="zarz-zdj.php" rel="#iframe" > <input type="submit" 
+    value="Twoja galeria"
     style="text-align:center;"
     class="submit2" 
     style="width:10vw;"></a>
     
-<a href="external3.php" rel="#iframe"> <input type="submit" value="Ustawienia" 
+<a href="external3.php" rel="#iframe"> <input type="submit" value="Zmiana hasła" 
     style="text-align:center;"
     class="submit2"></a>
     
-<a href="FAQ.php" rel="#iframe"> <input type="submit" value="Komentarze" 
+<a href="Zdjecia-uzytkownika.php" rel="#iframe"> <input type="submit" value="Dodaj zdjęcie" 
     style="text-align:center;"
     class="submit2"></a>
 </div>
