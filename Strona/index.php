@@ -1,10 +1,6 @@
 <?php
 session_start();
 unset($_SESSION['e_login']);
-unset($_SESSION['e_login1']);
-unset($_SESSION['e_przywhaslo']);
-unset($_SESSION['e_zdjęcie']);
-unset($_SESSION['e_haslo']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -207,7 +203,7 @@ unset($_SESSION['e_haslo']);
                             <div class="tm-img-gallery gallery-two">
                                 <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer2" 
-                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
+                                            style="display: block;height:100vh;width:86vw;margin:auto;padding-top:7vh;">
                                         <iframe id="petsdivcontainer2"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowyklik2", "petsdivcontainer2")
@@ -307,17 +303,17 @@ unset($_SESSION['e_haslo']);
     style="text-align:center;"
     class="submit2"></a>
     
-<a href="Zdjecia-uzytkownika.php" rel="#iframe" > <input type="submit" 
-    value="Zdjęcia"
+<a href="zarz-zdj.php" rel="#iframe" > <input type="submit" 
+    value="Twoja galeria"
     style="text-align:center;"
     class="submit2" 
     style="width:10vw;"></a>
     
-<a href="external3.php" rel="#iframe"> <input type="submit" value="Ustawienia" 
+<a href="external3.php" rel="#iframe"> <input type="submit" value="Zmiana hasła" 
     style="text-align:center;"
     class="submit2"></a>
     
-<a href="FAQ.php" rel="#iframe"> <input type="submit" value="Komentarze" 
+<a href="Zdjecia-uzytkownika.php" rel="#iframe"> <input type="submit" value="Dodaj zdjęcie" 
     style="text-align:center;"
     class="submit2"></a>
 </div>
@@ -434,7 +430,7 @@ mypets.init()
 									?>
                                         <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer6" 
-                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
+                                            style="display: block;height:100vh;width:86vw;margin:auto;padding-top:7vh;">
                                         <iframe id="petsdivcontainer6"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowylik6", "petsdivcontainer6")
