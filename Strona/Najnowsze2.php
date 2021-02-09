@@ -112,21 +112,23 @@ $con->close();
                                             </figure>
                                     <div class="Oceny">
                                         <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[1]";?>
+                                    Liczba polubień: <?php echo "$obrazyzaladowanelapki[1]";?>
 									</B>
+									        </div>
 								        </div>
 							<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[1]";?>">
 									    <?php if($lapa[1]==0)
 									    {echo "like";}else{echo "dislike";}?>
 									    
 									    
 									</button></form>
-								</div>
-						    </div>
+							</div>
+						            </div>
                         
                         </div>
                                 <?php  }  if($obrazyzaladowane[2]!=NULL) {?>
@@ -150,13 +152,15 @@ $con->close();
                                             </figure>
                                              <div class="Oceny">
                                         <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[2]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[2]";?>
 									</B>
+									        </div>
 								        </div>
 							<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[2]";?>">
 									    <?php if($lapa[2]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -185,13 +189,15 @@ $con->close();
                                             </figcaption>  </figure>         
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[3]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[3]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[3]";?>">
 									    <?php if($lapa[3]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -218,13 +224,15 @@ $con->close();
                                             </figcaption>  </figure>         
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
-								<B>
-									<?php echo "$obrazyzaladowanelapki[4]";?>
+                                            <div class="liczba_polubien">
+								    <B>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[4]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[4]";?>">
 									    <?php if($lapa[4]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -248,13 +256,15 @@ $con->close();
                                             </figcaption>     </figure>      
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                        <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[5]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[5]";?>
 									</B>
+									    </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[5]";?>">
 									    <?php if($lapa[5]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -278,13 +288,15 @@ $con->close();
                                             </figcaption></figure>
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[6]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[6]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[6]";?>">
 									    <?php if($lapa[6]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -308,13 +320,15 @@ $con->close();
                                             </figcaption>  </figure>         
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                        <div class="liczba_polubien">
 								    <B>
-									<?php echo "$obrazyzaladowanelapki[7]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[7]";?>
 									</B>
+									    </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[7]";?>">
 									    <?php if($lapa[7]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -338,13 +352,15 @@ $con->close();
                                             </figcaption>   </figure>        
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[8]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[8]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[8]";?>">
 									    <?php if($lapa[8]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -368,13 +384,15 @@ $con->close();
                                             </figcaption>   </figure>        
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[9]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[9]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[9]";?>">
 									    <?php if($lapa[9]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -398,13 +416,15 @@ $con->close();
                                             </figcaption></figure>
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">    
 									<B>
-									<?php echo "$obrazyzaladowanelapki[10]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[10]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[10]";?>">
 									    <?php if($lapa[10]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -428,13 +448,15 @@ $con->close();
                                             </figcaption>      </figure>     
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[11]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[11]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[11]";?>">
 									    <?php if($lapa[11]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -458,13 +480,15 @@ $con->close();
                                             </figcaption> </figure>          
                                       <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[12]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[12]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[12]";?>">
 									    <?php if($lapa[12]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -489,13 +513,15 @@ $con->close();
                                             </figcaption>    </figure>       
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[13]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[13]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[13]";?>">
 									    <?php if($lapa[13]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -521,13 +547,15 @@ $con->close();
                                             </figcaption></figure>
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[14]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[14]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[14]";?>">
 									    <?php if($lapa[14]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -551,13 +579,15 @@ $con->close();
                                             </figcaption>     </figure>      
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[15]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[15]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[15]";?>">
 									    <?php if($lapa[15]==0)
 									    {echo "like";}else{echo "dislike";}?>
@@ -581,13 +611,15 @@ $con->close();
                                             </figcaption>         </figure>  
                                         <div class="Oceny">
                                <div class="liczba" style="float:left";>
+                                            <div class="liczba_polubien">
 									<B>
-									<?php echo "$obrazyzaladowanelapki[16]";?>
+									Liczba polubień: <?php echo "$obrazyzaladowanelapki[16]";?>
 									</B>
+									        </div>
 								</div>
 								<div class="glos" style="float:right";>
 								<form class="form1" method="POST" name="lapa"action="lapka.php" style="text-align:center;padding-top: 0%;">
-									<Button type="submit" name="Link" 
+									<Button type="submit" class="like_buttons" name="Link" 
 									value="<?php echo "$obrazyzaladowane[16]";?>">
 									    <?php if($lapa[16]==0)
 									    {echo "like";}else{echo "dislike";}?>
