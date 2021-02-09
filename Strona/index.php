@@ -1,6 +1,10 @@
 <?php
 session_start();
 unset($_SESSION['e_login']);
+unset($_SESSION['e_login1']);
+unset($_SESSION['e_przywhaslo']);
+unset($_SESSION['e_zdjęcie']);
+unset($_SESSION['e_haslo']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,17 +26,6 @@ unset($_SESSION['e_login']);
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
 
-        <script>
-		
-            var tm_gray_site = false;
-            
-            if(tm_gray_site) {
-                $('html').addClass('gray');
-            }
-            else {
-                $('html').removeClass('gray');   
-            }
-        </script>
 </head>
 
     <body>
@@ -298,10 +291,7 @@ unset($_SESSION['e_login']);
 							
 							
 							<div id="pettabs" class="indentmenu" style="text-align:center;">
-<a href="external1.htm" rel="#iframe" class="selected"><input type="submit" 
-    value="Konto"
-    style="text-align:center;"
-    class="submit2"></a>
+
     
 <a href="zarz-zdj.php" rel="#iframe" > <input type="submit" 
     value="Twoja galeria"
