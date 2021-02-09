@@ -1,6 +1,10 @@
 <?php
 session_start();
 unset($_SESSION['e_login']);
+unset($_SESSION['e_login1']);
+unset($_SESSION['e_przywhaslo']);
+unset($_SESSION['e_zdjęcie']);
+unset($_SESSION['e_haslo']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,7 +169,7 @@ unset($_SESSION['e_login']);
                                 <div class="tm-img-gallery gallery-one" style="display:block">
                                     <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer1" 
-                                            style="display: block;height:100vh;width:100vw;">
+                                            style="display: block;height:120vh;width:100vw;">
                                             <iframe id="petsdivcontainer1"></iframe> 
                                                 <script type="text/javascript">
                                                var mypets=new ddajaxtabs("testowylik1", "petsdivcontainer1")
@@ -287,10 +291,7 @@ unset($_SESSION['e_login']);
 							
 							
 							<div id="pettabs" class="indentmenu" style="text-align:center;">
-<a href="external1.htm" rel="#iframe" class="selected"><input type="submit" 
-    value="Konto"
-    style="text-align:center;"
-    class="submit2"></a>
+
     
 <a href="zarz-zdj.php" rel="#iframe" > <input type="submit" 
     value="Twoja galeria"
