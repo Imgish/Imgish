@@ -45,7 +45,7 @@ unset($_SESSION['e_haslo']);
                         <?php 
                         ?>
                                         <form class="form2" method="POST" action="logout.php">
-										<input type="submit" value="Wyloguj" name="loguj" class="submit" align="center">
+										<input type="submit" value="Wyloguj" name="loguj" class="submit3" align="center">
 										</form>
                         <?php } 
                         else
@@ -59,7 +59,7 @@ unset($_SESSION['e_haslo']);
                         </button>
                         <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
 <ul class="nav navbar-nav">
-<li class="selected">
+<li  class="nav-item">
    <div id="testowylik1"> 
    <a href="Najnowsze2.php"   rel="#iframe" style="padding:0;">
     <input type="submit" 
@@ -277,8 +277,8 @@ unset($_SESSION['e_haslo']);
 				<li>
 					<div>
 					<div class="cd-full-width">
-                        <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="4">
-							<div class="rejestracja">  
+                        <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="4" style="height: fit-content;">
+							<div class="rejestracja" style="height: fit-content;">  
 							
 								
 								
@@ -315,8 +315,7 @@ mypets.setpersist(false)
 mypets.setselectedClassTarget("link")
 mypets.init()
 </script>
-</div>
-<div class="prawo1" id="petsdivcontainer">
+
 
 
 
@@ -503,6 +502,7 @@ mypets.init()
             
             <footer class="tm-footer">
             
+                
                 <div class="tm-social-icons-container text-xs-center">
                     <a href="https://pl-pl.facebook.com/" class="tm-social-link"><i class="fa fa-facebook"></i></a>
                     <a href="https://www.google.pl/" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
@@ -510,7 +510,6 @@ mypets.init()
                     <a href="https://www.behance.net/" class="tm-social-link"><i class="fa fa-behance"></i></a>
                     <a href="https://pl.linkedin.com/" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
               </div>
-                
                 <p class="tm-copyright-text">Imgish <span class="tm-copyright-year">2020</span> projekt na zaliczenie IO
                 
 
