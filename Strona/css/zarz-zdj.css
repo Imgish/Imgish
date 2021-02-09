@@ -2,4 +2,10 @@
     text-align:center;
     margin-bottom: 10%;
     color:#ceefeb;
+    width: auto;
+}
+@media (max-width: 680px){
+    .Zdjecie{
+        color: #000000;
+    }
 }
