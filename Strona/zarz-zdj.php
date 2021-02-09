@@ -33,26 +33,40 @@ $obraz[$i]=$wiersz1['Nazwa'];
 
         }
         $con->close();
-?>
+            ?>
     
-            
-							    
+        <?php
+             if($obraz[1]==NULL)
+             {
+                 if($obraz[2]==NULL)
+                    {
+                        if($obraz[3]==NULL)
+                        {
+                            echo "Nie wgrałeś jeszcze żadnego obrazu na strone.";
+                        }
+                     
+                    }
+             }
+             
+		?>			    
 								
 								
-                                        
-                                    <img src="obraz/<?php echo "$obraz[1]";?>" 
-                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
-                                           
-                                                <h2 class="tm-figure-title"> <span><strong>
+                                        <?php 	if($obraz[1]!=NULL) {?> 
+                                        <div>
+                                        <h2 > <span><strong>
                                                 <?php 
                                                 echo $obraz[1];
                                                 ?>
                                                 </strong></span></h2>
+                                    <img src="obraz/<?php echo "$obraz[1]";?>" 
+                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
+                                           
+                                                
                                                 
 <form method="POST" name="usun" action="usun-z.php">
 									<Button type="submit" name="przycisk" 
-									value="<?php echo "$obraz[1]";?>">
-									</button></form>
+									value="<?php echo "$obraz[1]";?>">Usuń
+									</button></form></div>
                                             
                                     
 							
@@ -60,19 +74,21 @@ $obraz[$i]=$wiersz1['Nazwa'];
 						         
 							
 								
-                                        
-                                            <img src="obraz/<?php echo "$obraz[2]";?>" 
-                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
-                                           
-                                              
+                                        <?php }	if($obraz[2]!=NULL) {?> 
+                                        <h2 > <span><strong>
                                                 <?php 
                                                 echo $obraz[2];
                                                 ?>
                                                 </strong></span></h2>
+                                            <img src="obraz/<?php echo "$obraz[2]";?>" 
+                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
+                                           
+                                              
+                                                
                                                 
                                                 <form method="POST" name="usun" action="usun-z.php">
 									<Button type="submit" name="przycisk" 
-									value="<?php echo "$obraz[2]";?>">
+									value="<?php echo "$obraz[2]";?>">Usuń
 									</button></form>
                                                    
                                            
@@ -82,21 +98,22 @@ $obraz[$i]=$wiersz1['Nazwa'];
 							   
 							
 								
-                                        
-                                           <img src="obraz/<?php echo "$obraz[3]";?>" 
-                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
-                                           
-                                                <h2 class="tm-figure-title"> <span><strong>
+                                        <?php }	if($obraz[3]!=NULL) {?> 
+                                        <h2 > <span><strong>
                                                 <?php 
                                                 echo $obraz[3];
                                                 ?>
                                                 </strong></span></h2>
+                                           <img src="obraz/<?php echo "$obraz[3]";?>" 
+                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
+                                           
                                                 
-                                                <form method="POST" name="usun" action="usun-z.php">
+                                                
+                                    <form method="POST" name="usun" action="usun-z.php">
 									<Button type="submit" name="przycisk" 
-									value="<?php echo "$obraz[3]";?>">
+									value="<?php echo "$obraz[3]";?>">Usuń
 									</button></form>
-                                                   
+                                              <?php }?>      
         </div>
 
 	</body>
