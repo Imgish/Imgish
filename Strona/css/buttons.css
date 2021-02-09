@@ -97,6 +97,14 @@
     margin-left: -65%;
     margin-right: 3%;
 }
+.like_buttons:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.like_buttons:active {
+	position:relative;
+	top:1px;
+}
 .liczba_polubien{
     font-family: Verdana;
 }
