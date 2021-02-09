@@ -60,7 +60,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
                                                 ?>
                                                 </strong></span></h2>
                                     <img src="obraz/<?php echo "$obraz[1]";?>" 
-                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
+                                    width="90%" height="90%" alt="Image" class="img-fluid tm-img">
                                            
                                                 
                                                 
@@ -82,7 +82,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
                                                 ?>
                                                 </strong></span></h2>
                                             <img src="obraz/<?php echo "$obraz[2]";?>" 
-                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
+                                    width="90%" height="90%" alt="Image" class="img-fluid tm-img">
                                            
                                               
                                                 
@@ -106,7 +106,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
                                                 ?>
                                                 </strong></span></h2>
                                            <img src="obraz/<?php echo "$obraz[3]";?>" 
-                                    width="500vw" height="400vw" alt="Image" class="img-fluid tm-img">
+                                    width="90%" height="90%" alt="Image" class="img-fluid tm-img">
                                            
                                                 
                                                 
