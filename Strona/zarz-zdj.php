@@ -7,6 +7,7 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/zarz-zdj.css">
     <title></title>
 	
 
@@ -52,7 +53,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
 								
 								
                                         <?php 	if($obraz[1]!=NULL) {?> 
-                                        <div>
+                                        <div class="Zdjecie">
                                         <h2 > <span><strong>
                                                 <?php 
                                                 echo $obraz[1];
@@ -75,7 +76,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
 							
 								
                                         <?php }	if($obraz[2]!=NULL) {?> 
-                                        <h2 > <span><strong>
+                                        <div class="Zdjecie"><h2 > <span><strong>
                                                 <?php 
                                                 echo $obraz[2];
                                                 ?>
@@ -89,7 +90,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
                                                 <form method="POST" name="usun" action="usun-z.php">
 									<Button type="submit" name="przycisk" 
 									value="<?php echo "$obraz[2]";?>">Usuń
-									</button></form>
+									</button></form></div>
                                                    
                                            
 							
@@ -99,7 +100,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
 							
 								
                                         <?php }	if($obraz[3]!=NULL) {?> 
-                                        <h2 > <span><strong>
+                                        <div class="Zdjecie"><h2 > <span><strong>
                                                 <?php 
                                                 echo $obraz[3];
                                                 ?>
@@ -112,7 +113,7 @@ $obraz[$i]=$wiersz1['Nazwa'];
                                     <form method="POST" name="usun" action="usun-z.php">
 									<Button type="submit" name="przycisk" 
 									value="<?php echo "$obraz[3]";?>">Usuń
-									</button></form>
+									</button></form></div>
                                               <?php }?>      
         </div>
 
