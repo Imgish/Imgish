@@ -83,24 +83,14 @@ $con->close();
     <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
     <link rel="stylesheet" href="css/templatemo-style.css">   
     <link rel="stylesheet" href="css/img.css">  
-    <link rel="stylesheet" href="css/logrej1.css">   
+    <link rel="stylesheet" href="css/logrej1.css"> 
+    <link rel="stylesheet" href="css/buttons.css">
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
-		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+	
 	<script src="https://kit.fontawesome.com/424ca7393a.js" crossorigin="anonymous"></script>	
 
-        <script>
-		
-            var tm_gray_site = false;
-            
-            if(tm_gray_site) {
-                $('html').addClass('gray');
-            }
-            else {
-                $('html').removeClass('gray');   
-            }
-</script>
 </head>
     <body style="width:100%;height:100%">
 							<div class="glowna-1 " style="text-align: center;">
@@ -610,29 +600,20 @@ $con->close();
                                 <?php  } ?>
                                 <form action="" method="POST" onclick='window.location.reload();'>
 									<?php if($zacz>=16){?>
-									<input type="submit" class="poprzednia_strona" value="Poprzednia strona" name="powrot">  <?php } ?>
-									<input type="submit" class="strona_glowna"  value="Strona główna" name="glowna">       
-									<input type="submit" class="kolejna_strona" value="Następna strona" name="przod">       
+									<div style="clear:both;">
+    									<input type="submit" class="poprzednia_strona" value="Poprzednia strona" name="powrot">  <?php } ?>
+    									<input type="submit" class="strona_glowna"  value="Strona główna" name="glowna">       
+    									<input type="submit" class="kolejna_strona" value="Następna strona" name="przod">
+									</div>
 								</form>
-								
-						
-                                
-
-                                    
 
 	</div>
-	
-	
+
 	        <script src="js/tether.min.js"></script> <!-- Tether (http://tether.io/)  --> 
         <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
         <script src="js/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
         <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
-	
-	
-	
-	
-	
-	
+
 	<script>
 
             function adjustHeightOfPage(pageNo) {
@@ -703,11 +684,6 @@ $con->close();
 
             });
         </script>    
-	
-	
-	
-	
-	
 	
 	</body>
 	</html>
