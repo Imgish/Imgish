@@ -374,7 +374,7 @@ mypets.init()
                             
                                             <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer5" 
-                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
+                                            style="display: block;height:100vh;width:86vw;margin:auto;padding-top:7vh;">
                                         <iframe id="petsdivcontainer5"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowylik3", "petsdivcontainer5")
@@ -430,7 +430,7 @@ mypets.init()
 									?>
                                         <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer6" 
-                                            style="display: block;height:100vh;width:86vw;padding-left:12vw;padding-top:7vh;">
+                                            style="display: block;height:100vh;width:86vw;margin:auto;padding-top:7vh;">
                                         <iframe id="petsdivcontainer6"></iframe>                       
                                             <script>
                                             var mypets=new ddajaxtabs("testowylik6", "petsdivcontainer6")
