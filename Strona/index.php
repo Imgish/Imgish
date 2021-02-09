@@ -22,17 +22,6 @@ unset($_SESSION['e_login']);
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
 
-        <script>
-		
-            var tm_gray_site = false;
-            
-            if(tm_gray_site) {
-                $('html').addClass('gray');
-            }
-            else {
-                $('html').removeClass('gray');   
-            }
-        </script>
 </head>
 
     <body>
