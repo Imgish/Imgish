@@ -83,7 +83,8 @@ $con->close();
     <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
     <link rel="stylesheet" href="css/templatemo-style.css">   
     <link rel="stylesheet" href="css/img.css">  
-    <link rel="stylesheet" href="css/logrej1.css">   
+    <link rel="stylesheet" href="css/logrej1.css"> 
+    <link rel="stylesheet" href="css/buttons.css">
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
@@ -614,25 +615,14 @@ $con->close();
 									<input type="submit" class="strona_glowna"  value="Strona główna" name="glowna">       
 									<input type="submit" class="kolejna_strona" value="Następna strona" name="przod">       
 								</form>
-								
-						
-                                
-
-                                    
 
 	</div>
-	
-	
+
 	        <script src="js/tether.min.js"></script> <!-- Tether (http://tether.io/)  --> 
         <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
         <script src="js/hero-slider-main.js"></script>          <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
         <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
-	
-	
-	
-	
-	
-	
+
 	<script>
 
             function adjustHeightOfPage(pageNo) {
@@ -703,11 +693,6 @@ $con->close();
 
             });
         </script>    
-	
-	
-	
-	
-	
 	
 	</body>
 	</html>
