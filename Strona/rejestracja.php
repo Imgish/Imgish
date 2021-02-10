@@ -13,7 +13,6 @@ $data5=mysqli_query($con,$query5);
 $dziala = true;
 if (isset($_POST['email']))
 {
-    //sprawdzanie loginu
     if ((strlen($login) < 3) || (strlen($login) > 20))
     {
         $dziala = false;
@@ -100,7 +99,6 @@ if ($dziala == true)
         VALUES('$login', '$haslo_szyfr', '$email')");
     $con->close();
     $_SESSION['e_login'] = "Udało się utworzyć konto.";
-    //header("Location:reload.php");
 }
 header("Location:rejestracjaform.php");
 exit();
