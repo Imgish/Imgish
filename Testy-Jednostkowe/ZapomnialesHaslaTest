@@ -1,0 +1,22 @@
+<?php
+session_start();
+unset($_SESSION['e_przywhaslo']);
+$con = mysqli_connect('localhost', 'id15971773_bazaio20test', 'JakiesLosoweHaslo12!', 'id15971773_projektio') or die('Brak połączenia z serwerem MySQL.');
+$login = $_POST['Login'];
+$email = $_POST['Email'];
+$NoweHaslo = $_POST['NoweHaslo'];
+$PowtorzNoweHaslo = $_POST['PowtorzNoweHaslo'];
+$dziala = true;
+
+
+    assert(empty($login) == false, "Nie podano loginu");
+    assert(empty($NoweHaslo) == false, "Nie podano nowego hasla");
+    assert(empty($PowtorzNoweHaslo) == false, "Nie powtorzono nowego hasla");
+    assert(strlen($NoweHaslo) > 5, "Nowe haslo jest zbyt krotkie");
+    assert(strlen($NoweHaslo) < 20, "Nowe haslo jest zbyt dlugie");
+    assert(ctype_alnum($NoweHaslo) != false, "Haslo musi miec tylko lirery i cyfry (bez polskich znakow)");
+    assert($NoweHaslo == $PowtorzNoweHaslo, "Nowe hasla nie sa identyczne");
+           
+$con->close();
+exit();
+?>
