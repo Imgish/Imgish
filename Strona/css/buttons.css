@@ -77,4 +77,34 @@
 	position:relative;
 	top:1px;
 }
-
+.like_buttons {
+	background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    background-color: #ededed;
+    border-radius: 24px;
+    border: 2px solid #9c9c9c;
+    display: inline-block;
+    cursor: pointer;
+    color: #3a8a9e;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: bold;
+    padding: -1% 0%;
+    padding-right: 30%;
+    padding-left: 30%;
+    text-decoration: none;
+    position: relative;
+    top: 8%;
+    margin-left: -65%;
+    margin-right: 3%;
+}
+.like_buttons:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.like_buttons:active {
+	position:relative;
+	top:1px;
+}
+.liczba_polubien{
+    font-family: Verdana;
+}

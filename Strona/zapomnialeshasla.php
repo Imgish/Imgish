@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<div class="main2">
+
 									
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@ session_start();
     </head>
     
     <body>
-        
+    <div class="main2">    
         <div Form class="FormRestore">
         <p class="sign" align="center">Przywróć hasło</p>
         				<p class="RejError">
@@ -24,12 +24,12 @@ session_start();
 						
 						?></p>
         <form class="form1" method="POST" action="zapomnialeshasla1.php" style="text-align:center;">
-				<input class="stare_haslo" type="text" align="center" name="Login" placeholder="Login">
+				<input class="stare_haslo" type="text" align="center" name="Login" placeholder="login">
 				<br>
-				<input class="nowe_haslo" type="mail" align="center" name="Email" placeholder="Email">
+				<input class="nowe_haslo" type="mail" align="center" name="Email" placeholder="email">
 				</br>
-				<input class="nowe_haslo" type="password" align="center" name="NoweHaslo" placeholder="Nowe haslo">
-				<input class="powtorz_haslo" type="password" align="center" name="PowtorzNoweHaslo" placeholder="Powtórz-NoweHaslo">
+				<input class="nowe_haslo" type="password" align="center" name="NoweHaslo" placeholder="nowe haslo">
+				<input class="powtorz_haslo" type="password" align="center" name="PowtorzNoweHaslo" placeholder="powtórz-nowe haslo">
 				<br>
 				<input type="submit" value="Zmień hasło" name="ZmienHaslo" class="submit" align="center">
 				</br>

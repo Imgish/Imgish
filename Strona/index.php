@@ -20,8 +20,9 @@ unset($_SESSION['e_haslo']);
     <link rel="stylesheet" href="css/magnific-popup.css">                                 
     <link rel="stylesheet" href="css/templatemo-style.css">   
     <link rel="stylesheet" href="css/img.css"> 
-    <link rel="stylesheet" href="css/logrej.css">  
-    
+    <link rel="stylesheet" href="css/logrej.css">
+    <link rel="stylesheet" href="css/Logout.css">
+    <link rel="stylesheet" href="css/buttons.css">
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ajaxtabs.js"></script>
         <link rel="stylesheet" type="text/css" href="js/ajaxtabs.css" />
@@ -45,7 +46,7 @@ unset($_SESSION['e_haslo']);
                         <?php 
                         ?>
                                         <form class="form2" method="POST" action="logout.php">
-										<input type="submit" value="Wyloguj" name="loguj" class="submit" align="center">
+										<input type="submit" value="Wyloguj" name="loguj" class="submit3" align="center">
 										</form>
                         <?php } 
                         else
@@ -59,7 +60,7 @@ unset($_SESSION['e_haslo']);
                         </button>
                         <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
 <ul class="nav navbar-nav">
-<li class="selected">
+<li  class="nav-item">
    <div id="testowylik1"> 
    <a href="Najnowsze2.php"   rel="#iframe" style="padding:0;">
     <input type="submit" 
@@ -108,22 +109,6 @@ unset($_SESSION['e_haslo']);
     class="nav-link">
     </a></div>
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    	
         <?php 
     	}?>
 	</a>
@@ -169,7 +154,7 @@ unset($_SESSION['e_haslo']);
                                 <div class="tm-img-gallery gallery-one" style="display:block">
                                     <div class="pudlo1-duze">
                                         <div class="glowna-1" id="petsdivcontainer1" 
-                                            style="display: block;height:100vh;width:100vw;">
+                                            style="display: block;height:120vh;width:100vw;">
                                             <iframe id="petsdivcontainer1"></iframe> 
                                                 <script type="text/javascript">
                                                var mypets=new ddajaxtabs("testowylik1", "petsdivcontainer1")
@@ -277,8 +262,8 @@ unset($_SESSION['e_haslo']);
 				<li>
 					<div>
 					<div class="cd-full-width">
-                        <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="4">
-							<div class="rejestracja">  
+                        <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="4" style="height: fit-content;">
+							<div class="rejestracja" style="height: fit-content;">  
 							
 								
 								
@@ -287,9 +272,7 @@ unset($_SESSION['e_haslo']);
 									{?>
                                        <div class="zakonto">
                                <div class="lewo">
-                               
-							
-							
+     
 							<div id="pettabs" class="indentmenu" style="text-align:center;">
 
     
@@ -315,13 +298,6 @@ mypets.setpersist(false)
 mypets.setselectedClassTarget("link")
 mypets.init()
 </script>
-</div>
-<div class="prawo1" id="petsdivcontainer">
-
-
-
-
-
 
 <script type="text/javascript">
 
@@ -333,33 +309,13 @@ mypets.init()
 </script>
     </div>
 
-
-										
-										
-										
-										</div>
-										</div>
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
+	                        </div>
+	                        </div>
+		
 									<?php } 
 									else
 									{ ?>
-								
-									
-									
-									
-									
+			
 									<div class="tm-img-gallery-container">
                             
                                             <div class="pudlo1-duze">
@@ -375,27 +331,10 @@ mypets.init()
                                             </div>
                                             </div>
                                     </div>
-                               
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
+
 										<?php
 									}?>
 								
-								
-								
-								
-								
-								
-								
-							
 							</div>
 						</div>
 					</div>
@@ -405,14 +344,11 @@ mypets.init()
 					<div class="cd-full-width">
                         <div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="5">
 	
-									
-									
-									
+	
 									<?php
 									if (isset($_SESSION['login']))
 									{
 									    ?>
-									  
 									    <?php
 									}
 									else
@@ -435,19 +371,8 @@ mypets.init()
 									<?php
 									}
 									?>
-									
-									
-									
-									
-									
-									
-									
-									
-									
-										
-										
-									
-						
+
+
 						</div>
 					</div>
 				</li>
@@ -503,6 +428,7 @@ mypets.init()
             
             <footer class="tm-footer">
             
+                
                 <div class="tm-social-icons-container text-xs-center">
                     <a href="https://pl-pl.facebook.com/" class="tm-social-link"><i class="fa fa-facebook"></i></a>
                     <a href="https://www.google.pl/" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
@@ -510,7 +436,6 @@ mypets.init()
                     <a href="https://www.behance.net/" class="tm-social-link"><i class="fa fa-behance"></i></a>
                     <a href="https://pl.linkedin.com/" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
               </div>
-                
                 <p class="tm-copyright-text">Imgish <span class="tm-copyright-year">2020</span> projekt na zaliczenie IO
                 
 
