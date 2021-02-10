@@ -38,6 +38,8 @@ $obrazyzaladowane = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 $obrazyzaladowanetytul = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16); 
 $obrazyzaladowanelapki = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 $lapa = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
+$wlasnosc = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
+$wlasnosc2 = array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 $liczba=0;
 for($pom1=$zacz; $pom1<=$skon ; $pom1=$pom1+1)
 {
@@ -56,6 +58,16 @@ $query5 = "SELECT * FROM Lapka WHERE TytulObrazu = '$obrazyzaladowane[$liczba]' 
 $data=mysqli_query($con,$query5);
 if (mysqli_num_rows($data)>0)
 {$lapa[$liczba]=1;}else{$lapa[$liczba]=0;}
+
+$query50 = "SELECT * FROM Obrazy WHERE Nazwa = '$obrazyzaladowane[$liczba]'" ;
+$data0=mysqli_query($con,$query50);
+$wierszo = $data0->fetch_assoc();
+$wlasnosc[$liczba]=$wierszo['IDUzytkownika'];
+
+$query500 = "SELECT * FROM Rejestracja WHERE ID = '$wlasnosc[$liczba]'" ;
+$data00=mysqli_query($con,$query500);
+$wierszo0 = $data00->fetch_assoc();
+$wlasnosc2[$liczba]=$wierszo0['Login'];
 if($liczba==16)
 {$liczba=0;}
 
@@ -105,7 +117,8 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[1];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[1] ?></p>
+                                                
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[1]";?>"></a>
                                                    
                                             </figcaption>  
@@ -146,6 +159,7 @@ $con->close();
                                                 </strong>
                                                     </span></h2>
                                                 <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[2] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[2]";?>"></a>
                                                 
                                             </figcaption>
@@ -184,7 +198,8 @@ $con->close();
                                                 ?>
                                                 </strong>
                                                     </span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[3] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[3]";?>"></a>
                                             </figcaption>  </figure>         
                                         <div class="Oceny">
@@ -219,7 +234,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[4];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[4] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[4]";?>"></a>
                                             </figcaption>  </figure>         
                                         <div class="Oceny">
@@ -283,7 +298,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[6];
                                                 ?>
                                                 </strong></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[6] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[6]";?>"></a>
                                             </figcaption></figure>
                                         <div class="Oceny">
@@ -315,7 +330,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[7];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[7] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[7]";?>"></a>
                                             </figcaption>  </figure>         
                                         <div class="Oceny">
@@ -347,7 +362,7 @@ $con->close();
 									                <?php echo "$obrazyzaladowanelapki[8]";?>
 									                </B>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[8] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[8]";?>"></a>
                                             </figcaption>   </figure>        
                                         <div class="Oceny">
@@ -379,7 +394,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[9];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[9] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[9]";?>"></a>
                                             </figcaption>   </figure>        
                                         <div class="Oceny">
@@ -411,7 +426,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[10];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[10] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[10]";?>"></a>
                                             </figcaption></figure>
                                         <div class="Oceny">
@@ -443,7 +458,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[11];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[11] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[11]";?>"></a>
                                             </figcaption>      </figure>     
                                         <div class="Oceny">
@@ -475,7 +490,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[12];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[12] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[12]";?>"></a>
                                             </figcaption> </figure>          
                                       <div class="Oceny">
@@ -508,7 +523,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[13];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[13] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[13]";?>"></a>
                                             </figcaption>    </figure>       
                                         <div class="Oceny">
@@ -542,7 +557,7 @@ $con->close();
                                                 ?>
                                                 </strong>
                                                     </span></h2>
-                                                <p class="tm-figure-description"></p>
+                                               <p class="tm-figure-description"><?php echo $wlasnosc2[14] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[14]";?>"></a>
                                             </figcaption></figure>
                                         <div class="Oceny">
@@ -574,7 +589,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[15];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[15] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[15]";?>"></a>
                                             </figcaption>     </figure>      
                                         <div class="Oceny">
@@ -606,7 +621,7 @@ $con->close();
                                                 echo $obrazyzaladowanetytul[16];
                                                 ?>
                                                 </strong></span></h2>
-                                                <p class="tm-figure-description"></p>
+                                                <p class="tm-figure-description"><?php echo $wlasnosc2[16] ?></p>
                                                 <a href="obraz/<?php echo "$obrazyzaladowane[16]";?>"></a>
                                             </figcaption>         </figure>  
                                         <div class="Oceny">
