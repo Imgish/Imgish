@@ -18,67 +18,26 @@ $wiersz = mysqli_fetch_array($data2);
 $wiersz1 = $wiersz['ID'];
 $query5="SELECT ID FROM Obrazy WHERE IDUzytkownika = '$wiersz1'";
 $data5=mysqli_query($con,$query5);
-if(mysqli_num_rows($data5) < 3)
-{
-    if (mysqli_num_rows($data)>0)
-    {
-        $_SESSION['e_zdjęcie']="Istnieje juz plik o takiej nazwie.";
-    }
-    else 
-        {
-        if(isset($_SESSION['login']))
-        {
-            if($roz == 'png' or $roz == 'jpg' or $roz == 'jpeg' or $roz =='gif')
-            {
-                if($plik_rozmiar <= 2000000)
-                {
-                    if(strlen($nazwa1) <= 25)  //14
-                    {
-                        if($tytul <= 14)
-                        {
-                            if(is_uploaded_file($plik_tmp))
-                            {
-                                $con->query("INSERT INTO Obrazy(IDUzytkownika, Nazwa, TytulObrazu, Rozmiar, DataWstawienia, Lapka) VALUES ('$wiersz1', '$plik_nazwa', '$tytul','$plik_rozmiar','$dataDoda','0')");
-                                move_uploaded_file($plik_tmp, "obraz/".$plik_nazwa);
-                                $_SESSION['e_zdjęcie']="<strong>$plik_nazwa</strong> o rozmiarze
-                                <strong>$plik_rozmiar bajtów</strong> został przesłany na serwer!";
-                            }
-                            else
-                            {
-                                $_SESSION['e_zdjęcie']="Nigdy nie będzie tak, że nie napotkasz problemów.";
-                            }
-                        }
-                        else
-                        {
-                            $_SESSION['e_zdjęcie']="Zbyt długi tytuł obrazu.";
-                        }
-                    }
-                    else
-                    {
-                        $_SESSION['e_zdjęcie']="Za długa nazwa pliku(max 25 znaków).";
-                    }
-                }
-                else
-                {
-                    $_SESSION['e_zdjęcie']="Za duży rozmiar pliku.";
-                }
-            }
-            else
-            {
-                $_SESSION['e_zdjęcie']="Złe rozszerzenie lub nie wypełniono któregoś z pól.";
-            }
-        }
-        else
-        {
-            $_SESSION['e_zdjęcie']="Musisz być zalogowany, aby móc wgrać zdjęcie.";
-        }
-    }
-}
-else
-{
-    $_SESSION['e_zdjęcie']="Nie możesz mieć więcej niż 3 zdjęcia.";
-}
-header("Location:Zdjecia-uzytkownika.php");
+echo "test";
+$testowaaa=1;
+
+
+
+assert_options(ASSERT_ACTIVE, 1);
+assert_options(ASSERT_WARNING, 0);
+assert_options(ASSERT_QUIET_EVAL, 1);
+
+    assert(mysqli_num_rows($data5) < 3,'uzytkownik moze miec wgrane tylko 3 zdjecia w tym samym czasie');
+    assert($mysqli_num_rows($data)==0, 'Istnieje juz plik o takiej nazwie.');
+    assert(!is_null($login),'Musisz być zalogowany, aby móc wgrać zdjęcie.'); 
+    assert($roz == 'png' || $roz == 'jpg' || $roz == 'jpeg' || $roz =='gif','Złe rozszerzenie.');
+    assert(!is_null($roz),'Nie wypełniono pola.');
+    assert($plik_rozmiar <= 2000000,'za duze zdjęcie.');
+    assert(strlen($nazwa1) <= 25,'za dluga nazwa pliku');
+    assert($tytul <= 14,'za dlugi tytul obrazu');
+    assert(is_uploaded_file($plik_tmp),'nie zaladowano pliku');                
+    
+    
+
 $con->close();
-exit();
 ?>
