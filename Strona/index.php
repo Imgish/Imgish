@@ -386,14 +386,14 @@ mypets.init()
                                     <div class="col-xs-12">
                                         <div class="tm-flex tm-contact-container">                                
                                             <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact"style="border-radius: 3em; margin-left: 5vw; margin-right: 5vw;">
-                                                <h2 class="tm-contact-info">Feel free to say Hi!</h2>
-                                                <p class="tm-text">Nulla sed urna at ligula maximus blandit. Mauris nisi ligula, ultricies ac diam id, hendrerit tincidunt ipsum. Maecenas non massa justo.</p>                                                
+                                                <h2 class="tm-contact-info">Napisz do nas!</h2>
+                                                <p class="tm-text">Możesz się z nami skontakować pisząc maila poniżej.</p>                                                
                                                 
                                                 <!-- contact form -->
                                                 <form action="index.html" method="post" class="tm-contact-form">
 
                                                     <div class="form-group">
-                                                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"  required/>
+                                                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Imię"  required/>
                                                     </div>
                                         
                                                     <div class="form-group">                                                        
@@ -401,10 +401,10 @@ mypets.init()
                                                     </div>                                                        
                                                     
                                                     <div class="form-group">
-                                                        <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                                                        <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Wiadomość" required></textarea>
                                                     </div> 
 
-                                                    <button type="submit" class="pull-xs-right tm-submit-btn">Send</button>  
+                                                    <button type="submit" class="pull-xs-right tm-submit-btn">Wyślij</button>  
                                                 
                                                 </form>  
                                             </div>
